@@ -1,0 +1,27 @@
+.Quiz_QuestionContainer,
+.Quiz_ResultsContainer {
+  display: flex;
+  justify-content: center;
+}
+.Quiz_AnswerContainer {
+  width: 100vw;
+  height: 10vh;
+  margin-bottom: 1vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.Quiz_Button {
+  background-color: lightblue;
+  border-radius: 15px;
+  border: 5px solid lightblue;
+  width: 36vw;
+  height: 20vh;
+  margin-bottom: 5vh;
+}
+.Quiz_Button:hover {
+  background-color: turquoise;
+}
+.Quiz_Button:focus {
+  outline: none;
+}
