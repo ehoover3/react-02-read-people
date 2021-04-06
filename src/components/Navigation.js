@@ -22,8 +22,11 @@ function Navigation(props) {
   const [myUser, setMyUser] = useState({});
   const [about, setAbout] = useState("");
   const [displayName, setDisplayName] = useState("");
+
+  console.log(authUser);
   const user = useStore((state) => state.user);
   const dispatch = useStore((state) => state.dispatch);
+
 
   useEffect(() => {
     fetch_getUser(authUser.username).then((data) => {
@@ -140,7 +143,7 @@ function Navigation(props) {
         {/* RIGHT SIDE */}
         <div className="Nav_Bar_RightSide">
           <div className="Nav_User">
-            <PersonCircle className="Nav_User" /> {myUser.displayName}
+            <PersonCircle className="Nav_User" /> {displayName}
             <div className="Nav_User_Dropdown">
               <a href="#">Settings</a>
               <a href="#">Logout</a>
