@@ -9,7 +9,6 @@ import LoginPage from "./views/0_LoginPage";
 import Home from "./views/1_Home";
 import Learn from "./views/2_Learn";
 import Chat from "./views/3_Chat";
-import Shop from "./views/4_Shop";
 import NotFound from "./views/5_NotFound";
 import Quiz from "./components/2_Learn/Quiz";
 import NewProfile from "./views/6_NewProfile";
@@ -36,7 +35,6 @@ function App() {
           <Route exact path="/Learn" component={Learn} />
           <Route exact path="/2_Learn/Quiz" component={Quiz} />
           <Route exact path="/Chat" component={Chat} />
-          <Route exact path="/Shop" component={Shop} />
           <Route exact path="/" component={Home} />
           <Route component={NotFound} />
         </Switch>
