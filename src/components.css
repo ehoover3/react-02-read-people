@@ -15,12 +15,32 @@
 }
 
 .CreateMessage_Input {
-  width: 65vw;
+  width: 80vw;
+  height: 20vh;
 }
-.CreateMessage_NewPost {
-  background-color: var(--orange6);
+.CreateMessage_Cancel {
+  background-color: grey;
   color: white;
   border-radius: 25px;
   padding: 1vh;
-  box-shadow: 0vw 0.5vh var(--orange5);
+}
+
+.CreateMessage_NewPost {
+  background-color: #007bff;
+  color: white;
+  border-radius: 25px;
+  padding: 1vh;
+}
+.CreateMessage_ChooseChatroom {
+  background-color: #007bff;
+  color: white;
+  border-radius: 25px;
+  padding: 1vh;
+}
+
+.MessageList_Flexbox {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 3vh;
+  color: grey;
 }
