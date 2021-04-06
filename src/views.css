@@ -71,5 +71,17 @@
 }
 
 /* CHAT */
+.Chat_Firstline_A {
+  display: flex;
+  justify-content: flex-end;
+}
 
+.Chat_FirstLine_B {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Chat_SpaceVertical {
+  height: 1.1vh;
+}
 /* SHOP */

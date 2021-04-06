@@ -7,6 +7,10 @@ import "./views.css";
 import "./components.css";
 import "./navigation.css";
 import "./quiz.css";
+import "./Dunya.css";
+import "./Ibe.css";
+import "./Eric.css";
+import "./Ryan.css";
 
 ReactDOM.render(
   <React.StrictMode>
