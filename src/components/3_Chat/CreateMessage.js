@@ -14,9 +14,6 @@ function CreateMessage(props) {
     fetch_createMessage(user.token, formData.messageText).then((message) => {
       dispatch({ type: STORE_CREATE_MESSAGE, payload: message });
     });
-    // .then(() => {
-    //   getUserMessages2();
-    // });
   };
 
   const handleChange = (e) => {
@@ -27,6 +24,9 @@ function CreateMessage(props) {
 
   return (
     <form id="createMessage" onSubmit={handleCreateMessage}>
+      <button type="submit" className="CreateMessage_NewPost">
+        POST MESSAGE
+      </button>
       <input
         className="CreateMessage_Input"
         type="text"
@@ -37,9 +37,6 @@ function CreateMessage(props) {
         placeholder="Create new message here"
         onChange={handleChange}
       />
-      <button type="submit" className="CreateMessage_NewPost">
-        CREATE NEW MESSAGE
-      </button>
     </form>
   );
 }

@@ -8,6 +8,7 @@ const initialState = {
   crowns: 7,
   streak: 2,
   gems: 5,
+  hideNewMessage: true,
 };
 
 //////////////////////////
@@ -29,11 +30,8 @@ export const STORE_ADD_LIKE = "STORE_ADD_LIKE";
 export const STORE_REMOVE_LIKE = "STORE_REMOVE_LIKE";
 //////////////////////////
 export const STORE_GET_MESSAGES = "GET_MESSAGES_STORE";
-export const STORE_ADD_CROWNS = "ADD_CROWNS_STORE";
-export const STORE_ADD_STREAK = "ADD_STREAK_STORE";
-export const STORE_RESET_STREAK = "RESET_STREAK_STORE";
 export const STORE_ADD_GEMS = "ADD_GEMS_STORE";
-
+export const STORE_HIDE_NEW_MESSAGE = "STORE_HIDE_NEW_MESSAGE";
 //////////////////////////
 
 const reducer = (state, action) => {
@@ -67,16 +65,12 @@ const reducer = (state, action) => {
     case STORE_REMOVE_LIKE:
       return { like: action.payload };
     //////////////////////////
-    case STORE_ADD_CROWNS:
-      return { crowns: action.payload };
-    case STORE_ADD_STREAK:
-      return { streak: action.payload };
-    case STORE_RESET_STREAK:
-      return { streak: action.payload };
     case STORE_ADD_GEMS:
       return { gems: action.payload };
     case STORE_GET_MESSAGES:
       return { messages: action.payload };
+    case STORE_HIDE_NEW_MESSAGE:
+      return { hideNewMessage: action.payload };
     default:
       return state;
   }
