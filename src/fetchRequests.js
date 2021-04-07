@@ -1,4 +1,4 @@
-export const baseURL = "https://kwitter-api-b.herokuapp.com";
+export const baseURL = "http://localhost:3000";
 // const baseURL = "https://socialapp-api.herokuapp.com/"; // alternative API server
 
 ////////////////////////////////////////////////////////////////////////////////
