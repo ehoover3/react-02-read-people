@@ -8,6 +8,7 @@ import {
 } from "../fetchRequests";
 import Photo from "../components/1_Home/Photo";
 import About from "../components/1_Home/About";
+// import Feed from "/Feeds";
 
 function Home(props) {
   const authUser = useStore((state) => state.user);

@@ -27,7 +27,6 @@ function Navigation(props) {
   const user = useStore((state) => state.user);
   const dispatch = useStore((state) => state.dispatch);
 
-
   useEffect(() => {
     fetch_getUser(authUser.username).then((data) => {
       setMyUser(data.user);
@@ -36,6 +35,15 @@ function Navigation(props) {
     });
   }, [props.match, count]);
 
+  // useEffect(() => {
+  //   setInterval(() => {
+  //     fetch_getUser(authUser.username).then((data) => {
+  //       setMyUser(data.user);
+  //       setAbout(data.user.about);
+  //       setDisplayName(data.user.displayName);
+  //     }, 5000);
+  //   });
+  // });
   useEffect(() => {
     clicked = "Home";
     document.querySelector(".Nav_Home").style.color = blue7;
