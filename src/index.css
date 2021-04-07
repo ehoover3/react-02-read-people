@@ -51,7 +51,6 @@
 }
 body {
   margin: 0;
-  background-color: var(--grey2);
   font-family: SofiaPro, Poppins, sans-serif;
 }
 
@@ -62,17 +61,7 @@ body {
   max-width: 100vw;
 }
 
-.card-header {
-  background-color: var(--green6);
-}
-
-.card-body {
-  padding: 0px;
-}
-.btn {
-  color: white;
-}
-
-.user-message-list {
+.MessageList_List {
+  margin: 0px;
   padding: 0px;
 }
