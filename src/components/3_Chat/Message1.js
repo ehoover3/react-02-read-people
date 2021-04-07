@@ -1,5 +1,5 @@
 import React from "react";
-import { Trash } from "react-bootstrap-icons";
+import { Trash, HandThumbsUp, HandThumbsDown } from "react-bootstrap-icons";
 import { useStore } from "../../store/store";
 import {
   fetch_deleteMessage,
@@ -7,9 +7,9 @@ import {
   fetch_removeLike,
 } from "../../fetchRequests";
 
-function Message(props) {
+function Message1(props) {
   const authUser = useStore((state) => state.user);
-  const { id, username } = props;
+  const { id } = props;
   const { likeArray } = props || [];
 
   const likedId = (props) => {
@@ -30,13 +30,9 @@ function Message(props) {
   }
   {
     /* <!-- //////////////////////////////////////////////////
-  See what fetch requests are doing. 
-  You have your store setup for ADDLIKE and UNLIKE but aren't using them here with a dispatch.
-  Although we don't need the response information to render anything to the page, 
-  having that 
-  dipatch({type: ADDLIKE, payload: responseFromFetch})
-  is really useful to debug.
-  This also goes for deleteMessage down below
+dispatch add like to the store
+dispatch remove like to the store
+    dipatch({type: ADDLIKE, payload: responseFromFetch})
 /////////////////////////////////////////////////////// --> */
   }
   function handleRemoveLike() {
@@ -46,15 +42,20 @@ function Message(props) {
   }
 
   return (
-    <div className="Message">
-      <div className="Message_FirstLine">
+    <div>
+      <p></p>
+      <div className="Message">
+        {/* LEFT SIDE OF THE LINE */}
         <div>
-          {props.username}: {props.text}
+          <span className="Message_Bold">{props.username} </span>
+          <span>{props.text}</span>
         </div>
 
+        {/* RIGHT SIDE OF THE LINE */}
         <div>
           {props.username === authUser.username && (
             <button
+              className="Message_Button"
               onClick={() =>
                 fetch_deleteMessage(authUser.token, id).then(() => {
                   props.getAllOfMessages();
@@ -64,15 +65,17 @@ function Message(props) {
               <Trash />
             </button>
           )}
-          Likes: {props.likes} &nbsp;
-          <button onClick={handleAddLike}>Like</button>
-          <button onClick={handleRemoveLike}>Unlike</button>
+          <button className="Message_Button" onClick={handleAddLike}>
+            <HandThumbsUp />
+          </button>
+          {props.likes}
+          <button className="Message_Button" onClick={handleRemoveLike}>
+            <HandThumbsDown />
+          </button>
+          <p></p>
         </div>
-      </div>
-      <div className="Message_SecondLine">
-        <div> </div>
       </div>
     </div>
   );
 }
-export default Message;
+export default Message1;
