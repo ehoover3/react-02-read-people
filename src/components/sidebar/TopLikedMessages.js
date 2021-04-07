@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react"; // import react things
-import { STORE_GET_ALL_MESSAGES, useStore } from "../../store/store"; // import store // gets message data
-import { fetch_getAllMessages } from "../../fetchRequests"; // import fetch requests
-import Message from "../3_Chat/Message"; // import components // HTML format
+import React, { useState, useEffect } from "react";
+import { STORE_GET_ALL_MESSAGES, useStore } from "../../store/store";
+import { fetch_getAllMessages } from "../../fetchRequests";
+import Message2 from "./Message2";
 import { Accordion, Button, Card } from "react-bootstrap";
 
 function TopLikedMessages() {
@@ -11,7 +11,7 @@ function TopLikedMessages() {
     messageText: "",
   });
 
-  function getAllOfMessages() {
+  function getTopLikedMessages() {
     fetch_getAllMessages().then((messageList) => {
       messageList.messages
         .sort((a, b) => b.likes.length - a.likes.length)
@@ -25,7 +25,7 @@ function TopLikedMessages() {
   }
 
   useEffect(() => {
-    getAllOfMessages();
+    getTopLikedMessages();
   }, []);
 
   return (
@@ -42,7 +42,7 @@ function TopLikedMessages() {
               {/* CONDITIONAL RENDERING: if messages.messages exists, run map function */}
               {messages.messages &&
                 messages.messages.map((message) => (
-                  <Message
+                  <Message2
                     likes={message.likes.length}
                     key={message.id}
                     messageId={message.id}
@@ -51,7 +51,7 @@ function TopLikedMessages() {
                     createdAt={message.createdAt}
                     id={message.id}
                     likeArray={message.likes}
-                    getAllOfMessages={getAllOfMessages}
+                    getTopLikedMessages={getTopLikedMessages}
                   />
                 ))}
             </section>

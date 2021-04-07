@@ -4,14 +4,14 @@
 }
 
 .App_ColumnLeft {
-  width: 80vw;
+  width: 85vw;
   display: flex;
   flex-direction: column;
   outline: grey 1px solid;
 }
 
 .App_ColumnRight {
-  width: 20vw;
+  width: 15vw;
   display: flex;
   flex-direction: column;
   outline: grey 1px solid;
@@ -71,17 +71,17 @@
 }
 
 /* CHAT */
-.Chat_Firstline_A {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.Chat_FirstLine_B {
+.CreateMessage_FirstLine {
   display: flex;
   justify-content: space-between;
 }
 
-.Chat_SpaceVertical {
-  height: 1.1vh;
+.CreateMessage_DropDown {
+  display: flex;
+  justify-content: flex-start;
 }
-/* SHOP */
+
+.CreateMessage_Input {
+  width: 85vw;
+  height: 20vh;
+}

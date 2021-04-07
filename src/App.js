@@ -11,6 +11,7 @@ import Learn from "./views/2_Learn";
 import Chat from "./views/3_Chat";
 import NotFound from "./views/5_NotFound";
 import Quiz from "./components/2_Learn/Quiz";
+import NewProfile from "./views/6_NewProfile";
 
 function App() {
   const user = useStore((state) => state.user);
@@ -20,6 +21,7 @@ function App() {
     return (
       <Switch>
         <Route exact path="/" component={LoginPage} />
+        <Route exact path="/NewProfile" component={NewProfile} />
         <Route component={NotFound} />
       </Switch>
     );

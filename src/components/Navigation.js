@@ -9,6 +9,7 @@ import {
   Stars,
 } from "react-bootstrap-icons";
 import { fetch_getUser } from "../fetchRequests";
+import { Nav } from "react-bootstrap";
 
 function Navigation(props) {
   let clicked;
@@ -22,6 +23,8 @@ function Navigation(props) {
   const [myUser, setMyUser] = useState({});
   const [about, setAbout] = useState("");
   const [displayName, setDisplayName] = useState("");
+  const user = useStore((state) => state.user);
+  const dispatch = useStore((state) => state.dispatch);
 
   console.log(authUser);
   const user = useStore((state) => state.user);
