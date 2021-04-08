@@ -17,7 +17,7 @@ const Navbar = () => {
     };
   }, []);
   function handleArticlesearch(e) {
-    window.open("http://kwitter-api-b.herokuapp.com/auth/google/login");
+    window.open("");
   }
   return (
     <>

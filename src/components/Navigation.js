@@ -27,15 +27,22 @@ function Navigation(props) {
   const dispatch = useStore((state) => state.dispatch);
 
   console.log(authUser);
-  const user = useStore((state) => state.user);
-  const dispatch = useStore((state) => state.dispatch);
 
-  useEffect(() => {
+  function getNavInfo() {
     fetch_getUser(authUser.username).then((data) => {
       setMyUser(data.user);
       setAbout(data.user.about);
       setDisplayName(data.user.displayName);
     });
+  }
+
+  useEffect(() => {
+    getNavInfo();
+    // // fetch_getUser(authUser.username).then((data) => {
+    //   setMyUser(data.user);
+    //   setAbout(data.user.about);
+    //   setDisplayName(data.user.displayName);
+    // });
   }, [props.match, count]);
 
   // useEffect(() => {

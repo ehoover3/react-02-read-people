@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import Article from "./Article";
+import Article from "./DunyaArticle";
 
 export default function Feeds() {
   const [articles, setArticles] = useState([]);
