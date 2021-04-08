@@ -4,18 +4,16 @@ import { Container } from "react-bootstrap";
 import { useStore } from "./store/store";
 import "bootstrap/dist/css/bootstrap.min.css";
 //VIEWS
-import Navigation from "./components/Navigation";
+import Navigation from "./components/Navigation/Navigation";
 import LoginPage from "./views/0_LoginPage";
 import Home from "./views/1_Home";
 import Learn from "./views/2_Learn";
 import Chat from "./views/3_Chat";
 import NotFound from "./views/5_NotFound";
 import Quiz from "./components/2_Learn/Quiz";
-import NewProfile from "./views/6_NewProfile";
-
+import NewProfile from "./components/0_LoginPage/NewProfile";
 function App() {
   const user = useStore((state) => state.user);
-
   if (!user.token) {
     // User Hasn't Logged In
     return (
@@ -42,5 +40,4 @@ function App() {
     );
   }
 }
-
 export default App;
