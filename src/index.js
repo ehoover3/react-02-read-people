@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App";
-import { Keyframes } from "react-keyframes";
+// import { Keyframes } from "react-keyframes";
 import "./index.css";
 import "./App.css";
 import "./Dunya.css";
