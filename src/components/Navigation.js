@@ -27,8 +27,6 @@ function Navigation(props) {
   const dispatch = useStore((state) => state.dispatch);
 
   console.log(authUser);
-  const user = useStore((state) => state.user);
-  const dispatch = useStore((state) => state.dispatch);
 
   useEffect(() => {
     fetch_getUser(authUser.username).then((data) => {
