@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom"
 import { STORE_LOGIN, useStore, STORE_CREATE_USER } from "../../store/store";
 import { fetch_login, fetch_createUser } from "../../fetchRequests";
 
@@ -8,9 +9,6 @@ function Login(props) {
   const [formData, setFormData] = useState({
     username: "",
     password: "",
-    signUpUserName: "",
-    signUpPassword: "",
-    signUpDisplayName: "",
   });
 
   const handleLogin = (e) => {
@@ -53,39 +51,7 @@ function Login(props) {
 
   return (
     <>
-      {/* SIGN UP FORM */}
-      <form className="Login" onSubmit={handleSignIn}>
-        <label htmlFor="username"></label>
-        <input
-          type="text"
-          name="signUpUserName"
-          value={formData.signUpUserName}
-          autoFocus
-          required
-          onChange={handleChangeSignIn}
-          placeholder="username"
-        />
-        <label htmlFor="signUpPassword"></label>
-        <input
-          type="password"
-          name="signUpPassword"
-          value={formData.signUpPassword}
-          required
-          onChange={handleChangeSignIn}
-          placeholder="password"
-        />
-        <label htmlFor="signUpDisplayName"></label>
-        <input
-          type="text"
-          name="signUpDisplayName"
-          value={formData.signUpDisplayName}
-          required
-          onChange={handleChangeSignIn}
-          placeholder="display name"
-        />
-        <button type="submit">Sign Up</button>
-      </form>
-
+    <h1 className="Login">Life Skills</h1>
       {/* LOG IN FORM */}
       <form className="Login" onSubmit={handleLogin}>
         <label htmlFor="username"></label>
@@ -108,6 +74,11 @@ function Login(props) {
           placeholder="password"
         />
         <button type="submit">Login</button>
+        <h6>
+              Not yet a user?
+              <Link to="/NewProfile">Click Here</Link>
+            </h6>
+
       </form>
     </>
   );
