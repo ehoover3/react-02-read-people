@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Form, Button, Container } from "react-bootstrap";
 import { useStore } from "../../store/store";
 import { fetch_getUser, fetch_updateUser } from "../../fetchRequests";
+// import { getNavInfo } from "../Navigation";
 
 function About(props) {
   const authUser = useStore((state) => state.user);
@@ -29,6 +30,7 @@ function About(props) {
         setMyUser(data.user);
       }
     );
+    // getNavInfo();
   }
 
   return (

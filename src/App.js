@@ -34,6 +34,7 @@ function App() {
           <Route exact path="/2_Learn/Quiz" component={Quiz} />
           <Route exact path="/Chat" component={Chat} />
           <Route exact path="/" component={Home} />
+          {/* <Route exact path="/Feeds" component={Feed} /> */}
           <Route component={NotFound} />
         </Switch>
       </Container>

@@ -7,6 +7,7 @@ function SideBar(props) {
     <>
       <AllUsersNames />
       <TopLikedMessages />
+      {/* <Feeds /> */}
     </>
   );
 }
