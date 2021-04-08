@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import SideBar from "../components/sidebar/SideBar.js";
+import SideBar from "../components/Sidebar/SideBar.js";
 import { useStore } from "../store/store";
 import {
   fetch_getUser,
@@ -8,7 +8,6 @@ import {
 } from "../fetchRequests";
 import Photo from "../components/1_Home/Photo";
 import About from "../components/1_Home/About";
-
 function Home(props) {
   const authUser = useStore((state) => state.user);
   const [myUser, setMyUser] = useState({});
@@ -16,7 +15,6 @@ function Home(props) {
   const [displayName, setDisplayName] = useState("");
   const [picture, setPicture] = useState({});
   const [count, setCount] = useState(0);
-
   useEffect(() => {
     fetch_getUser(authUser.username).then((data) => {
       setMyUser(data.user);
@@ -24,7 +22,6 @@ function Home(props) {
       setDisplayName(data.user.displayName);
     });
   }, [props.match, count]);
-
   function handleSubmit(e) {
     e.preventDefault();
     const newUserInfo = {
@@ -37,7 +34,6 @@ function Home(props) {
       }
     );
   }
-
   function handleSubmitPhoto(event) {
     setCount((count) => count + 1);
     console.log("handle submit photo");
@@ -47,7 +43,6 @@ function Home(props) {
       picture
     ).then((response) => console.log(response));
   }
-
   return (
     <div className="App_ColumnContainer">
       <div className="App_ColumnLeft">
@@ -60,5 +55,4 @@ function Home(props) {
     </div>
   );
 }
-
 export default Home;

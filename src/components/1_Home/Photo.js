@@ -31,11 +31,11 @@ function Photo(props) {
 
   return (
     <section>
-      <div className="Home_ImageContainer">
-        <img className="Home_Image" src={baseURL + myUser.pictureLocation} />
+      <div className="Photo_ImageContainer">
+        <img className="Photo_Image" src={baseURL + myUser.pictureLocation} />
       </div>
 
-      <div className="Home_ImageButtons">
+      <div className="Photo_ImageButtons">
         <span>
           <input
             type="file"
