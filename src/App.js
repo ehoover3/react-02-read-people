@@ -10,6 +10,8 @@ import Home from "./views/1_Home";
 import Learn from "./views/2_Learn";
 import Chat from "./views/3_Chat";
 import NotFound from "./views/5_NotFound";
+import User from "./views/6_User";
+
 import Quiz from "./components/2_Learn/Quiz";
 import NewProfile from "./components/0_LoginPage/NewProfile";
 function App() {
@@ -33,6 +35,7 @@ function App() {
           <Route exact path="/Learn" component={Learn} />
           <Route exact path="/2_Learn/Quiz" component={Quiz} />
           <Route exact path="/Chat" component={Chat} />
+          <Route exact path="/User" component={User} />
           <Route exact path="/" component={Home} />
           {/* <Route exact path="/Feeds" component={Feed} /> */}
           <Route component={NotFound} />

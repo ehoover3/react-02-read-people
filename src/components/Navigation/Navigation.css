@@ -1,20 +1,26 @@
 .Nav_Bar {
-  outline: 1px grey solid;
-  /* font-size: 3vh; */
-  display: flex;
-  justify-content: space-between;
   position: absolute;
   top: 0vh;
   left: 0vw;
-  width: 100vw;
   z-index: +5;
 }
-.Nav_Bar_LeftSide {
+
+.Nav_Flex {
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Nav_FlexLeft,
+.Nav_FlexCenter,
+.Nav_FlexRight {
   display: flex;
 }
-.Nav_Bar_RightSide {
-  display: flex;
+
+.Nav_ListIcon {
+  height: 40px;
 }
+
 .Nav_SpaceVertical {
-  height: 5vh;
+  height: 40px;
 }
