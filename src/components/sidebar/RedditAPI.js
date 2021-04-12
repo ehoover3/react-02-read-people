@@ -1,13 +1,28 @@
 import React, { useState, useEffect } from "react";
+import Article from "./Article";
 import { Accordion, Button, Card } from "react-bootstrap";
 
 // https://github.com/public-apis/public-apis
 
 function RedditAPI() {
+  const [articles, setArticles] = useState([]);
+  const [subreddit, setSubreddit] = useState("body_language");
+
   // useEffect(() => {}, []);
-
-  // Add the API fetch request here
-
+  useEffect(() => {
+    // Add the API fetch request here
+    fetch("https://www.reddit.com/r/body_language.json").then((res) => {
+      if (res.status != 200) {
+        console.log("Error");
+        return;
+      }
+      res.json().then((data) => {
+        if (data != null) {
+          setArticles(data.data.children);
+        }
+      });
+    });
+  }, [subreddit]);
   // Add other functions here
 
   return (
@@ -20,7 +35,25 @@ function RedditAPI() {
         </Card.Header>
         <Accordion.Collapse eventKey="0">
           <Card.Body>
-            <section>ADD FUNCTIONS OR TEXT HERE</section>
+            <section>
+              <div className="App">
+                <header>
+                  <input
+                    type="text"
+                    className="input"
+                    value={subreddit}
+                    onChange={(e) => setSubreddit(e.target.value)}
+                  />
+                </header>
+                <div className="articles">
+                  {articles != null
+                    ? articles.map((article, index) => (
+                        <Article key={index} article={article.data} />
+                      ))
+                    : ""}
+                </div>
+              </div>
+            </section>
           </Card.Body>
         </Accordion.Collapse>
       </Card>
