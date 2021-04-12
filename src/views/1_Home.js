@@ -8,6 +8,8 @@ import {
 } from "../fetchRequests";
 import Photo from "../components/1_Home/Photo";
 import About from "../components/1_Home/About";
+import CarouselOne from "../BootstrapsCarousel";
+
 function Home(props) {
   const authUser = useStore((state) => state.user);
   const [myUser, setMyUser] = useState({});
@@ -43,16 +45,20 @@ function Home(props) {
       picture
     ).then((response) => console.log(response));
   }
+
   return (
     <div className="App_ColumnContainer">
       <div className="App_ColumnLeft">
+        <CarouselOne />
         <Photo />
         <About />
       </div>
       <div className="App_ColumnRight">
         <SideBar />
       </div>
+      <div></div>
     </div>
   );
 }
+
 export default Home;

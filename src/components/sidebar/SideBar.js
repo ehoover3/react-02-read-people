@@ -9,7 +9,8 @@ function SideBar(props) {
     <>
       <AllUsersNames />
       <TopLikedMessages />
-      <RedditAPI>{/* <Feeds /> */}</RedditAPI>
+      <RedditAPI />
+      {/*</RedditAPI>*/}
       <Ibe />
     </>
   );
