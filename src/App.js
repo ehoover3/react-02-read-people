@@ -9,6 +9,7 @@ import LoginPage from "./views/0_LoginPage";
 import Home from "./views/1_Home";
 import Learn from "./views/2_Learn";
 import Chat from "./views/3_Chat";
+import Play from "./views/5_Play";
 import NotFound from "./views/5_NotFound";
 import User from "./views/6_User";
 
@@ -36,6 +37,7 @@ function App() {
           <Route exact path="/2_Learn/Quiz" component={Quiz} />
           <Route exact path="/Chat" component={Chat} />
           <Route exact path="/User" component={User} />
+          <Route exact path="/Play" component={Play} />
           <Route exact path="/" component={Home} />
           {/* <Route exact path="/Feeds" component={Feed} /> */}
           <Route component={NotFound} />

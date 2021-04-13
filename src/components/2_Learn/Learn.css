@@ -3,6 +3,14 @@
 .QuizMenu_Brick {
   font-size: 15vh;
 }
+
+.QuizMenu_ArrowUpCircle {
+  transition: transform 0.7s ease-in-out;
+}
+.QuizMenu_ArrowUpCircle:hover {
+  transform: rotate(360deg);
+}
+
 .QuizMenu_Text {
   font-size: 10vh;
 }
