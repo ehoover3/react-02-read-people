@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useStore } from "../../store/store";
 import {
   Chat,
   Gem,
@@ -12,6 +11,11 @@ import {
 } from "react-bootstrap-icons";
 import { fetch_getUser } from "../../fetchRequests";
 import { Button, Nav } from "react-bootstrap";
+import {
+  useStore,
+  STORE_OPEN_SIDEBAR,
+  STORE_HAMBURGER_CLICK_AT_LEAST_ONCE,
+} from "../../store/store";
 
 function Navigation(props) {
   const gems = useStore((state) => state.gems);
@@ -19,8 +23,22 @@ function Navigation(props) {
   const [myUser, setMyUser] = useState({});
   const [about, setAbout] = useState("");
   const [displayName, setDisplayName] = useState("");
+  const dispatch = useStore((state) => state.dispatch);
+  const openSidebar = useStore((state) => state.openSidebar);
+  const hambugerClickAtLeastOnce = useStore((state) => state.openSidebar);
 
-  console.log(authUser);
+  const toggleSidebar = () => {
+    // if (hambugerClickAtLeastOnce === false) {
+    dispatch({
+      type: STORE_HAMBURGER_CLICK_AT_LEAST_ONCE,
+      payload: true,
+    });
+    // }
+    dispatch({
+      type: STORE_OPEN_SIDEBAR,
+      payload: !openSidebar,
+    });
+  };
 
   useEffect(() => {
     fetch_getUser(authUser.username).then((data) => {
@@ -78,9 +96,21 @@ function Navigation(props) {
               </Nav.Item>
 
               <Nav.Item>
-                {/* <Button variant="outline-primary" id="Nav_Button"> */}
-                <List className="Nav_ListIcon" />
-                {/* </Button> */}
+                {openSidebar ? (
+                  <div id="hamburger" className="open" onClick={toggleSidebar}>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                ) : (
+                  <div id="hamburger" onClick={toggleSidebar}>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                )}
               </Nav.Item>
               <div> </div>
             </div>

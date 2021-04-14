@@ -4,19 +4,22 @@ import { Container } from "react-bootstrap";
 import { useStore } from "./store/store";
 import "bootstrap/dist/css/bootstrap.min.css";
 //VIEWS
-import Navigation from "./components/Navigation/Navigation";
 import LoginPage from "./views/0_LoginPage";
+import NewProfile from "./components/0_LoginPage/NewProfile";
+import Navigation from "./components/Navigation/Navigation";
+import SideBar from "./components/Sidebar/SideBar.js";
 import Home from "./views/1_Home";
 import Learn from "./views/2_Learn";
 import Chat from "./views/3_Chat";
 import Play from "./views/5_Play";
-import NotFound from "./views/5_NotFound";
 import User from "./views/6_User";
-
+import NotFound from "./views/5_NotFound";
 import Quiz from "./components/2_Learn/Quiz";
-import NewProfile from "./components/0_LoginPage/NewProfile";
+
 function App() {
   const user = useStore((state) => state.user);
+  const openSidebar = useStore((state) => state.openSidebar);
+
   if (!user.token) {
     // User Hasn't Logged In
     return (
@@ -31,6 +34,8 @@ function App() {
     return (
       <Container className="App_Container">
         <Navigation />
+        <SideBar />
+        {/* {openSidebar ? <SideBar /> : <SideBar />} */}
         <Switch>
           <Route exact path="/Home" component={Home} />
           <Route exact path="/Learn" component={Learn} />

@@ -9,6 +9,8 @@ const initialState = {
   streak: 2,
   gems: 5,
   booleanHideCreateMessage: true,
+  openSidebar: false,
+  hambugerClickAtLeastOnce: false,
 };
 //////////////////////////
 export const STORE_LOGIN = "STORE_LOGIN";
@@ -32,6 +34,9 @@ export const STORE_GET_MESSAGES = "GET_MESSAGES_STORE";
 export const STORE_ADD_GEMS = "ADD_GEMS_STORE";
 export const STORE_HIDE_NEW_MESSAGE = "STORE_HIDE_NEW_MESSAGE";
 export const STORE_FLIP_HIDE_CREATE_MESSAGE = "STORE_FLIP_HIDE_CREATE_MESSAGE";
+export const STORE_OPEN_SIDEBAR = "STORE_OPEN_SIDEBAR";
+export const STORE_HAMBURGER_CLICK_AT_LEAST_ONCE =
+  "STORE_HAMBURGER_CLICK_AT_LEAST_ONCE"; // this is so that the sidebar close animation doesn't run upon first loading the program
 //////////////////////////
 const reducer = (state, action) => {
   switch (action.type) {
@@ -73,6 +78,13 @@ const reducer = (state, action) => {
 
     case STORE_FLIP_HIDE_CREATE_MESSAGE:
       return { booleanHideCreateMessage: action.payload };
+
+    case STORE_OPEN_SIDEBAR:
+      return { openSidebar: action.payload };
+
+    case STORE_HAMBURGER_CLICK_AT_LEAST_ONCE:
+      return { hambugerClickAtLeastOnce: action.payload };
+
     default:
       return state;
   }

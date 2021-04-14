@@ -10,9 +10,7 @@ function Learn(props) {
       <div className="App_ColumnLeft">
         <QuizMenu />
       </div>
-      <div className="App_ColumnRight">
-        <SideBar />
-      </div>
+      <div className="App_ColumnRight">{/* <SideBar /> */}</div>
     </div>
   );
 }

@@ -14,9 +14,7 @@ function Chat(props) {
       <div className="App_ColumnLeft">
         {booleanHideCreateMessage ? <MessageList /> : <CreateMessage />}
       </div>
-      <div className="App_ColumnRight">
-        <SideBar />
-      </div>
+      <div className="App_ColumnRight">{/* <SideBar /> */}</div>
     </div>
   );
 }
