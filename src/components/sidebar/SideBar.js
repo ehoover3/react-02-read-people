@@ -1,17 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import AllUsersNames from "./AllUsersNames.js";
 import TopLikedMessages from "./TopLikedMessages.js";
 import RedditAPI from "./RedditAPI.js";
 import Ibe from "./Ibe.js";
+import { useStore } from "../../store/store";
 
-function SideBar(props) {
+function SideBar() {
+  const hambugerClickAtLeastOnce = useStore(
+    (state) => state.hambugerClickAtLeastOnce
+  );
+  const openSidebar = useStore((state) => state.openSidebar);
+
   return (
     <>
-      <AllUsersNames />
-      <TopLikedMessages />
-      <RedditAPI />
-      {/*</RedditAPI>*/}
-      <Ibe />
+      {hambugerClickAtLeastOnce ? (
+        <div className={openSidebar ? "sidebar open" : "sidebar1 close"}>
+          <AllUsersNames />
+          <TopLikedMessages />
+          <RedditAPI />
+          <Ibe />
+        </div>
+      ) : (
+        <div></div>
+      )}
     </>
   );
 }

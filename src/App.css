@@ -9,16 +9,16 @@
   justify-content: center;
 }
 .App_ColumnLeft {
-  width: 85vw;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   outline: grey 1px solid;
   margin: 0px;
   padding: 0px;
 }
-.App_ColumnRight {
+/* .App_ColumnRight {
   width: 15vw;
   display: flex;
   flex-direction: column;
   outline: grey 1px solid;
-}
+} */

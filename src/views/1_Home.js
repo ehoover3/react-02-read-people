@@ -53,9 +53,7 @@ function Home(props) {
         <Photo />
         <About />
       </div>
-      <div className="App_ColumnRight">
-        <SideBar />
-      </div>
+      <div className="App_ColumnRight">{/* <SideBar /> */}</div>
       <div></div>
     </div>
   );
