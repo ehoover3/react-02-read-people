@@ -11,10 +11,10 @@
   /* position: relative; */
 }
 
-button {
+#Login_Button {
   mix-blend-mode: soft-light;
 }
-h6 {
+#Login_Name {
   mix-blend-mode: luminosity;
 }
 
@@ -70,7 +70,7 @@ h6 {
   }
 }
 
-#Life {
+#Login_Life {
   /* color: rgb(218, 32, 32); */
   color: gold;
   /* 
@@ -86,7 +86,7 @@ h6 {
 /* font-size:; */
 /* } */
 
-#MoveForm {
+#Login_MoveForm {
   /* margin-top:auto; */
   /* margin-bottom: auto; */
   /* margin-left: auto; */
@@ -95,7 +95,7 @@ h6 {
   top: 130px;
 }
 
-a {
+#Login_Link {
   color: #2a3f03;
 }
 

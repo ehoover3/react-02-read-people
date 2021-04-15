@@ -51,8 +51,8 @@ function Login(props) {
 
   return (
     <>
-      <div id="MoveForm">
-        <div id="Life">
+      <div id="Login_MoveForm">
+        <div id="Login_Life">
           <h1 className="Login">Life Skills</h1>
         </div>
         {/* LOG IN FORM */}
@@ -77,10 +77,14 @@ function Login(props) {
             onChange={handleChangeLogIn}
             placeholder="password"
           />
-          <button type="submit">Login</button>
-          <h6>
+          <button className=" Login_Button" type="submit">
+            Login
+          </button>
+          <h6 className="Login_Name">
             Not yet a user?
-            <Link to="/NewProfile">Click Here</Link>
+            <Link className="Login_Link" to="/NewProfile">
+              Click Here
+            </Link>
           </h6>
         </form>
       </div>
