@@ -8,7 +8,7 @@ import {
 } from "../fetchRequests";
 import Photo from "../components/1_Home/Photo";
 import About from "../components/1_Home/About";
-import CarouselOne from "../BootstrapsCarousel";
+import carousel from "../components/1_Home/Carousel";
 
 function Home(props) {
   const authUser = useStore((state) => state.user);
@@ -49,7 +49,7 @@ function Home(props) {
   return (
     <div className="App_ColumnContainer">
       <div className="App_ColumnLeft">
-        <CarouselOne />
+        <carousel />
         <Photo />
         <About />
       </div>
