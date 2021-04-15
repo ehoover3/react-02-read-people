@@ -10,5 +10,7 @@ BACKEND: direct message - USER -> ANOTHER USER object, specific token (authorize
 
 # IDEAS
 
-- Add a video learning inside the Learn Section
-- Add a text fly in animation
+- Add video learning inside the Learn Section
+- Add a text fly in animation for the side bar
+- rename navbar "LEARN" to "GROW", then refactor all files accordingly
+- rename "views" folder to "pages"
