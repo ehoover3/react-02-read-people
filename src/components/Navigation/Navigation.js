@@ -7,7 +7,9 @@ import {
   PersonCircle,
   PlayCircle,
   List,
-  Stars,
+  Star,
+  PlayBtn,
+  Tree,
 } from "react-bootstrap-icons";
 import { fetch_getUser } from "../../fetchRequests";
 import { Button, Nav } from "react-bootstrap";
@@ -44,7 +46,7 @@ function Navigation(props) {
     fetch_getUser(authUser.username).then((data) => {
       setMyUser(data.user);
       setAbout(data.user.about);
-      setDisplayName(data.user.displayName);
+      setDisplayName(data.user.displayName.toUpperCase());
     });
   }, []);
 
@@ -67,12 +69,12 @@ function Navigation(props) {
             <div className="Nav_FlexCenter">
               <Nav.Item>
                 <Nav.Link eventKey="1" as={Link} to="/Learn">
-                  <Stars /> LEARN
+                  <Tree /> GROW
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item>
                 <Nav.Link eventKey="2" as={Link} to="/Chat">
-                  <Chat /> CHAT
+                  <Chat /> TALK
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item>
@@ -91,7 +93,7 @@ function Navigation(props) {
 
               <Nav.Item>
                 <Nav.Link eventKey="5" disabled>
-                  <Gem /> {gems}
+                  <Star /> {gems}
                 </Nav.Link>
               </Nav.Item>
 
