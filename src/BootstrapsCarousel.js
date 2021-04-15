@@ -33,7 +33,85 @@ const CarouselOne = () => {
           src="/Assets/Images/dog3.jpg" //800x400?text=Third slide&bg=20232a"
           alt="Third slide"
         />
+        <Carousel.Caption>
+          <h3> slide label</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src="/Assets/Images/startrekImage1.jpg" //800x400?text=Third slide&bg=20232a"
+          alt="Third slide"
+        />
 
+        <Carousel.Caption>
+          <h3>Second slide label</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src="/Assets/Images/startrekimages2.jpg" //800x400?text=Third slide&bg=20232a"
+          alt="Third slide"
+        />
+
+        <Carousel.Caption>
+          <h3>Second slide label</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src="/Assets/Images/us-body-language.jpg" //800x400?text=Third slide&bg=20232a"
+          alt="Third slide"
+        />
+        <Carousel.Caption>
+          <h3> slide label</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src="/Assets/Images/3-Janeways.jpg" //800x400?text=Third slide&bg=20232a"
+          alt="Third slide"
+        />
+        <Carousel.Caption>
+          <h3>Second slide label</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src="/Assets/Images/body-language-image3.jpg" //800x400?text=Third slide&bg=20232a"
+          alt="Third slide"
+        />{" "}
+        <Carousel.Caption>
+          <h3>Second slide label</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src="/Assets/Images/body-language-stance.jpg" //800x400?text=Third slide&bg=20232a"
+          alt="Third slide"
+        />{" "}
+        <Carousel.Caption>
+          <h3>Second slide label</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src="/Assets/Images/body-language-and-culture.jpg" //800x400?text=Third slide&bg=20232a"
+          alt="Third slide"
+        />
         <Carousel.Caption>
           <h3>Third slide label</h3>
           <p>

@@ -6,7 +6,7 @@ import { Accordion, Button, Card } from "react-bootstrap";
 
 function RedditAPI() {
   const [articles, setArticles] = useState([]);
-  const [subreddit, setSubreddit] = useState("body_language");
+  const [subreddit, setSubreddit] = useState("webdev");
 
   // useEffect(() => {}, []);
   useEffect(() => {

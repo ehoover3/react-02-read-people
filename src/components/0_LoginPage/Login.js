@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 import { STORE_LOGIN, useStore, STORE_CREATE_USER } from "../../store/store";
 import { fetch_login, fetch_createUser } from "../../fetchRequests";
 
@@ -51,35 +51,39 @@ function Login(props) {
 
   return (
     <>
-    <h1 className="Login">Life Skills</h1>
-      {/* LOG IN FORM */}
-      <form className="Login" onSubmit={handleLogin}>
-        <label htmlFor="username"></label>
-        <input
-          type="text"
-          name="username"
-          value={formData.username}
-          autoFocus
-          required
-          onChange={handleChangeLogIn}
-          placeholder="username"
-        />
-        <label htmlFor="password"></label>
-        <input
-          type="password"
-          name="password"
-          value={formData.password}
-          required
-          onChange={handleChangeLogIn}
-          placeholder="password"
-        />
-        <button type="submit">Login</button>
-        <h6>
-              Not yet a user?
-              <Link to="/NewProfile">Click Here</Link>
-            </h6>
+      <div id="MoveForm">
+        <div id="Life">
+          <h1 className="Login">Life Skills</h1>
+        </div>
+        {/* LOG IN FORM */}
 
-      </form>
+        <form className="Login" onSubmit={handleLogin}>
+          <label htmlFor="username"></label>
+          <input
+            type="text"
+            name="username"
+            value={formData.username}
+            autoFocus
+            required
+            onChange={handleChangeLogIn}
+            placeholder="username"
+          />
+          <label htmlFor="password"></label>
+          <input
+            type="password"
+            name="password"
+            value={formData.password}
+            required
+            onChange={handleChangeLogIn}
+            placeholder="password"
+          />
+          <button type="submit">Login</button>
+          <h6>
+            Not yet a user?
+            <Link to="/NewProfile">Click Here</Link>
+          </h6>
+        </form>
+      </div>
     </>
   );
 }
