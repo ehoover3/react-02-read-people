@@ -16,82 +16,78 @@ function PlayVideo(props) {
   const videoHeight = 480;
   const videoWidth = 640;
   const [initializing, setInitializing] = useState(false);
+  const [playVideo, setPlayVideo] = useState(false);
   const videoRef = useRef();
   const canvasRef = useRef();
-  const [playVideo, setPlayVideo] = useState(false);
 
   useEffect(() => {
     const loadModels = async () => {
       const MODEL_URL = process.env.PUBLIC_URL + "/models";
       setInitializing(true);
-      try {
-        Promise.all([
-          faceapi.nets.tinyFaceDetector.loadFromUri(MODEL_URL),
-          faceapi.nets.faceLandmark68Net.loadFromUri(MODEL_URL),
-          faceapi.nets.faceRecognitionNet.loadFromUri(MODEL_URL),
-          faceapi.nets.faceExpressionNet.loadFromUri(MODEL_URL),
-        ]).then(startVideo);
-      } catch (e) {
-        console.log("ERROR - IN THE PROMISE: ", e);
-      }
+      Promise.all([
+        faceapi.nets.tinyFaceDetector.loadFromUri(MODEL_URL),
+        faceapi.nets.faceLandmark68Net.loadFromUri(MODEL_URL),
+        faceapi.nets.faceRecognitionNet.loadFromUri(MODEL_URL),
+        faceapi.nets.faceExpressionNet.loadFromUri(MODEL_URL),
+      ]).then(startVideo);
     };
     loadModels();
     return () => {
       setPlayVideo(false);
-      setInitializing(false);
+      clearInterval(window.myInterval); // clear out the contents of myInterval
+      // clearInterval(window.myUserMedia);
     };
   }, []);
 
   const startVideo = () => {
     setPlayVideo(true);
-    navigator.getUserMedia(
-      {
-        video: {},
-      },
-      (stream) => (videoRef.current.srcObject = stream),
-      (err) => console.log(err)
-    );
+    // window.myUserMedia = navigator.getUserMedia(
+    try {
+      navigator.getUserMedia(
+        {
+          video: {},
+        },
+        (stream) => (videoRef.current.srcObject = stream),
+        (err) => console.log(err)
+      );
+    } catch {
+      console.log("error");
+    }
   };
 
   const handleVideoOnPlay = () => {
-    setInterval(async () => {
+    window.myInterval = setInterval(async () => {
       if (initializing) {
         setInitializing(false);
       }
 
       // the code currently breaks here
       // if the video is playing, then do the canvas stuff
-      if (playVideo === true) {
-        canvasRef.current.innerHTML = faceapi.createCanvasFromMedia(
-          videoRef.current
-        );
-        const displaySize = {
-          width: videoWidth,
-          height: videoHeight,
-        };
-        faceapi.matchDimensions(canvasRef.current, displaySize);
-        const detections = await faceapi
-          .detectAllFaces(
-            videoRef.current,
-            new faceapi.TinyFaceDetectorOptions()
-          )
-          .withFaceLandmarks()
-          .withFaceExpressions();
-        const resizedDetections = faceapi.resizeResults(
-          detections,
-          displaySize
-        );
+      canvasRef.current.innerHTML = faceapi.createCanvasFromMedia(
+        videoRef.current
+      );
 
-        // the question marks say "if this currently exist, then do the .getContext and .clearRect"
-        // canvasRef?.current
-        //   ?.getContext("2d")
-        canvasRef.current
-          .getContext("2d")
-          .clearRect(0, 0, videoWidth, videoHeight);
-        faceapi.draw.drawDetections(canvasRef.current, resizedDetections);
-        faceapi.draw.drawFaceLandmarks(canvasRef.current, resizedDetections);
-        faceapi.draw.drawFaceExpressions(canvasRef.current, resizedDetections);
-      }
+      console.log("THIS: " + canvasRef.current.innerHTML);
+      const displaySize = {
+        width: videoWidth,
+        height: videoHeight,
+      };
+      faceapi.matchDimensions(canvasRef.current, displaySize);
+      const detections = await faceapi
+        .detectAllFaces(videoRef.current, new faceapi.TinyFaceDetectorOptions())
+        .withFaceLandmarks()
+        .withFaceExpressions();
+      const resizedDetections = faceapi.resizeResults(detections, displaySize);
+
+      // the question marks say "if this currently exist, then do the .getContext and .clearRect"
+      // canvasRef?.current
+      //   ?.getContext("2d")
+      canvasRef.current
+        .getContext("2d")
+        .clearRect(0, 0, videoWidth, videoHeight);
+      faceapi.draw.drawDetections(canvasRef.current, resizedDetections);
+      faceapi.draw.drawFaceLandmarks(canvasRef.current, resizedDetections);
+      faceapi.draw.drawFaceExpressions(canvasRef.current, resizedDetections);
     }, 1000);
   };
 

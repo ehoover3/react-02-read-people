@@ -2,17 +2,14 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
   Chat,
-  Gem,
   HouseFill,
   PersonCircle,
   PlayCircle,
-  List,
   Star,
-  PlayBtn,
   Tree,
 } from "react-bootstrap-icons";
 import { fetch_getUser } from "../../fetchRequests";
-import { Button, Nav } from "react-bootstrap";
+import { Nav } from "react-bootstrap";
 import {
   useStore,
   STORE_OPEN_SIDEBAR,
@@ -30,12 +27,10 @@ function Navigation(props) {
   const hambugerClickAtLeastOnce = useStore((state) => state.openSidebar);
 
   const toggleSidebar = () => {
-    // if (hambugerClickAtLeastOnce === false) {
     dispatch({
       type: STORE_HAMBURGER_CLICK_AT_LEAST_ONCE,
       payload: true,
     });
-    // }
     dispatch({
       type: STORE_OPEN_SIDEBAR,
       payload: !openSidebar,

@@ -38,7 +38,6 @@ function App() {
       <Container className="App_Container">
         <Navigation />
         <SideBar />
-        {/* {openSidebar ? <SideBar /> : <SideBar />} */}
         <Switch>
           <Route exact path="/Home" component={Home} />
           <Route exact path="/Learn" component={Learn} />

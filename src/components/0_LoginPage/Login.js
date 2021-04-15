@@ -12,6 +12,7 @@ function Login(props) {
   });
 
   const handleLogin = (e) => {
+    // how to store data in the brower or cookies to persist through a refresh // https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API
     e.preventDefault(); // keeps local state active
     fetch_login(formData.username, formData.password).then((userData) =>
       dispatch({ type: STORE_LOGIN, payload: userData })
