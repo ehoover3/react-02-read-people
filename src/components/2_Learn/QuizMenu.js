@@ -2,7 +2,7 @@ import React from "react";
 import {
   ArrowUpCircle,
   Bricks,
-  Check2Circle,
+  CheckCircle,
   InfoCircle,
   PersonCircle,
   PlayCircle,
@@ -15,22 +15,27 @@ function QuizMenu(props) {
   return (
     <>
       <div className="QuizMenu_Line">
-        <Link to="/2_Learn/Quiz" className="">
-          <ArrowUpCircle className="QuizMenu_ArrowUpCircle" />
+        <Link to="/2_Learn/Quiz">
+          <QuestionCircle className="QuizMenu_ArrowUpCircle" />
+          <div>Dog Body Language</div>
         </Link>
       </div>
-      <div className="QuizMenu_Line">
+
+      {/* <div className="QuizMenu_Line">
         <Button variant="light" disabled>
           Dog Body Language
         </Button>
-      </div>
+      </div> */}
 
       <div className="QuizMenu_Line">
         <div className="QuizMenu_FlexColumn">
-          <PlayCircle className="QuizMenu_ArrowUpCircle" />
+          <Link to="/2_Learn/Video1">
+            <PlayCircle className="QuizMenu_ArrowUpCircle" />
+            <div>Empathy</div>
+          </Link>
         </div>
         <div className="QuizMenu_FlexColumn">
-          <Check2Circle className="QuizMenu_ArrowUpCircle" />
+          <CheckCircle className="QuizMenu_ArrowUpCircle" />
         </div>
       </div>
 
@@ -49,7 +54,10 @@ function QuizMenu(props) {
         <ArrowUpCircle className="QuizMenu_ArrowUpCircle" />
       </div>
       <div className="QuizMenu_Line">
-        <ArrowUpCircle className="QuizMenu_ArrowUpCircle" />
+        <Link to="/2_Learn/Video2">
+          <PlayCircle className="QuizMenu_ArrowUpCircle" />
+          <div>Let Them Go</div>
+        </Link>
       </div>
 
       <div className="QuizMenu_Line">
