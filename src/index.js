@@ -17,7 +17,6 @@ import "./components/2_Learn/Learn.css";
 import "./components/3_Chat/Chat.css";
 import "./components/5_Play/Play.css";
 import "./components/6_User/User.css";
-import { ViewStacked } from "react-bootstrap-icons";
 
 ReactDOM.render(
   <React.StrictMode>

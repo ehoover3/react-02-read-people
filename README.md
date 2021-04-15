@@ -1,12 +1,11 @@
 # Credits and References
 
 Authors: Dunya Moss, Eric Hoover, Ibiene Longjohn, Ryan Detzler
-References: Peter Mayor, TJ Hindman, Meagan Ramey, Mike A.
+References: Peter Mayor, TJ Hindman, Meagan Ramey, Mike A., Gabby Basha, Mia Peace
 
-# NOTES (DELETE LATER)
+# INSTALLED DEPENDENCIES
 
-BACKEND: each chatroom is an object with a messages array
-BACKEND: direct message - USER -> ANOTHER USER object, specific token (authorize these users have these messages), message array
+- npm install react-youtube
 
 # IDEAS
 
