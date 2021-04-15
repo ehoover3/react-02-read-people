@@ -1,7 +1,7 @@
 import React from "react";
 import { ArrowUpCircle, Bricks } from "react-bootstrap-icons";
 import { Link } from "react-router-dom";
-import SideBar from "../components/Sidebar/SideBar.js";
+import SideBar from "../components/sidebar/SideBar.js";
 import QuizMenu from "../components/2_Learn/QuizMenu.js";
 
 function Learn(props) {

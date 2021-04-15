@@ -7,13 +7,14 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import LoginPage from "./views/0_LoginPage";
 import NewProfile from "./components/0_LoginPage/NewProfile";
 import Navigation from "./components/Navigation/Navigation";
-import SideBar from "./components/Sidebar/SideBar.js";
+import SideBar from "./components/sidebar/SideBar.js";
 import Home from "./views/1_Home";
 import Learn from "./views/2_Learn";
 import Chat from "./views/3_Chat";
 import Play from "./views/5_Play";
 import User from "./views/6_User";
 import NotFound from "./views/5_NotFound";
+//
 import Quiz from "./components/2_Learn/Quiz";
 import Video1 from "./components/2_Learn/videos/Video1";
 import Video2 from "./components/2_Learn/videos/Video2";
@@ -41,14 +42,13 @@ function App() {
         <Switch>
           <Route exact path="/Home" component={Home} />
           <Route exact path="/Learn" component={Learn} />
+          <Route exact path="/Chat" component={Chat} />
+          <Route exact path="/Play" component={Play} />
+          <Route exact path="/User" component={User} />
           <Route exact path="/2_Learn/Quiz" component={Quiz} />
           <Route exact path="/2_Learn/Video1" component={Video1} />
           <Route exact path="/2_Learn/Video2" component={Video2} />
-          <Route exact path="/Chat" component={Chat} />
-          <Route exact path="/User" component={User} />
-          <Route exact path="/Play" component={Play} />
           <Route exact path="/" component={Home} />
-          {/* <Route exact path="/Feeds" component={Feed} /> */}
           <Route component={NotFound} />
         </Switch>
       </Container>

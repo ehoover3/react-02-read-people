@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import AllUsersNames from "./AllUsersNames.js";
+import AllUsers from "./AllUsers.js";
+import Friends from "./Friends.js";
 import TopLikedMessages from "./TopLikedMessages.js";
 import RedditAPI from "./RedditAPI.js";
 import Ibe from "./Ibe.js";
@@ -15,7 +16,8 @@ function SideBar() {
     <>
       {hambugerClickAtLeastOnce ? (
         <div className={openSidebar ? "sidebar open" : "sidebar1 close"}>
-          <AllUsersNames />
+          <AllUsers />
+          <Friends />
           <TopLikedMessages />
           <RedditAPI />
           <Ibe />
