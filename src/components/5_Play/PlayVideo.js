@@ -35,24 +35,18 @@ function PlayVideo(props) {
     return () => {
       setPlayVideo(false);
       clearInterval(window.myInterval); // clear out the contents of myInterval
-      // clearInterval(window.myUserMedia);
     };
   }, []);
 
   const startVideo = () => {
     setPlayVideo(true);
-    // window.myUserMedia = navigator.getUserMedia(
-    try {
-      navigator.getUserMedia(
-        {
-          video: {},
-        },
-        (stream) => (videoRef.current.srcObject = stream),
-        (err) => console.log(err)
-      );
-    } catch {
-      console.log("error");
-    }
+    navigator.getUserMedia(
+      {
+        video: {},
+      },
+      (stream) => (videoRef.current.srcObject = stream),
+      (err) => console.log(err)
+    );
   };
 
   const handleVideoOnPlay = () => {
