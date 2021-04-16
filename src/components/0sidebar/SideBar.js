@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import AllUsers from "./AllUsers.js";
 import Friends from "./Friends.js";
 import TopLikedMessages from "./TopLikedMessages.js";

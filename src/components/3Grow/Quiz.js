@@ -5,10 +5,7 @@ import { useStore, STORE_ADD_GEMS } from "../../store/store";
 
 export default function App() {
   const dispatch = useStore((state) => state.dispatch);
-  // const crowns = useStore((state) => state.crowns);
-  // const streak = useStore((state) => state.streak);
   const gems = useStore((state) => state.gems);
-  // const userName = useStore((state) => state.userName);
 
   let questions = info1;
   const [currentQuestion, setCurrentQuestion] = useState(0);

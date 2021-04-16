@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { Badge, Button, Dropdown } from "react-bootstrap";
+import React, { useState } from "react";
+import { Button, Dropdown } from "react-bootstrap";
 
 function DropDown(props) {
   const [dropDownText, setDropDownText] = useState("CHATROOM 1");

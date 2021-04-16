@@ -100,7 +100,7 @@ const Carousel1 = () => {
           className="d-block w-100"
           src="/Assets/Images/body-language-stance.jpg" //800x400?text=Third slide&bg=20232a"
           alt="Third slide"
-        />{" "}
+        />
         <Carousel.Caption>
           <h3>Second slide label</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>

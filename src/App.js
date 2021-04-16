@@ -21,7 +21,6 @@ import Video2 from "./components/3Grow/videos/Video2";
 
 function App() {
   const user = useStore((state) => state.user);
-  const openSidebar = useStore((state) => state.openSidebar);
 
   if (!user.token) {
     // User Hasn't Logged In

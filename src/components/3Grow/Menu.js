@@ -20,12 +20,6 @@ function Menu(props) {
         </Link>
       </div>
 
-      {/* <div className="QuizMenu_Line">
-        <Button variant="light" disabled>
-          Dog Body Language
-        </Button>
-      </div> */}
-
       <div className="QuizMenu_Line">
         <div className="QuizMenu_FlexColumn">
           <Link to="/Grow/Video1">

@@ -1,21 +1,13 @@
 import React from "react";
-import { useStore } from "../store/store";
-import Photo from "../components/6User/Photo";
 import About from "../components/6User/About";
+import Photo from "../components/6User/Photo";
 
-function User(props) {
-  const booleanHideCreateMessage = useStore(
-    (state) => state.booleanHideCreateMessage
-  );
-
+function User() {
   return (
-    <div className="App_ColumnContainer">
-      <div className="App_ColumnLeft">
-        <Photo />
-        <About />
-      </div>
-      <div className="App_ColumnRight">{/* <SideBar /> */}</div>
-    </div>
+    <>
+      <Photo />
+      <About />
+    </>
   );
 }
 export default User;

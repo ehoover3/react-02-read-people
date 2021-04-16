@@ -4,7 +4,6 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import "./Dunya.css";
 import "./components/0navigation/Navigation.css";
 import "./components/0sidebar/Sidebar.css";
 import "./components/1Login/Login.css";

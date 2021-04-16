@@ -19,12 +19,9 @@ import {
 function Navigation(props) {
   const gems = useStore((state) => state.gems);
   const authUser = useStore((state) => state.user);
-  const [myUser, setMyUser] = useState({});
-  const [about, setAbout] = useState("");
   const [displayName, setDisplayName] = useState("");
   const dispatch = useStore((state) => state.dispatch);
   const openSidebar = useStore((state) => state.openSidebar);
-  const hambugerClickAtLeastOnce = useStore((state) => state.openSidebar);
 
   const toggleSidebar = () => {
     dispatch({
@@ -39,8 +36,6 @@ function Navigation(props) {
 
   useEffect(() => {
     fetch_getUser(authUser.username).then((data) => {
-      setMyUser(data.user);
-      setAbout(data.user.about);
       setDisplayName(data.user.displayName.toUpperCase());
     });
   }, []);

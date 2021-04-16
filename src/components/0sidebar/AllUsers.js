@@ -10,7 +10,7 @@ import {
 } from "react-bootstrap";
 import { DashCircle, PlusCircle } from "react-bootstrap-icons";
 
-function AllUsers(props) {
+function AllUsers() {
   const [users, setUsers] = useState([]);
 
   let REPLACE_THIS_VARIABLE_LATER = true;

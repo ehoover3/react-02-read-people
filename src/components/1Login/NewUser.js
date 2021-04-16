@@ -1,12 +1,74 @@
-import React from "react";
-import { useStore } from "../../store/store";
-import CreateUser from "./CreateUser";
+import React, { useState } from "react";
+import { STORE_LOGIN, useStore, STORE_CREATE_USER } from "../../store/store";
+import { fetch_login, fetch_createUser } from "../../fetchRequests";
 
 function NewUser(props) {
-  const user = useStore((state) => state.user);
+  const dispatch = useStore((state) => state.dispatch);
+
+  const [formData, setFormData] = useState({
+    signUpUserName: "",
+    signUpPassword: "",
+    signUpDisplayName: "",
+  });
+
+  const handleChangeSignIn = (e) => {
+    const inputName = e.target.name;
+    const inputValue = e.target.value;
+    setFormData((state) => ({ ...state, [inputName]: inputValue }));
+  };
+
+  const handleSignIn = (e) => {
+    e.preventDefault();
+    fetch_createUser(
+      formData.signUpUserName,
+      formData.signUpPassword,
+      formData.signUpDisplayName
+    ).then((userData) => {
+      dispatch({ type: STORE_CREATE_USER, payload: userData });
+      if (userData.statusCode === 200) {
+        fetch_login(
+          formData.signUpUserName,
+          formData.signUpPassword
+        ).then((userData) =>
+          dispatch({ type: STORE_LOGIN, payload: userData })
+        );
+      }
+    });
+  };
+
   return (
     <>
-      <CreateUser />
+      <form className="Login" onSubmit={handleSignIn}>
+        <label htmlFor="username"></label>
+        <input
+          type="text"
+          name="signUpUserName"
+          value={formData.signUpUserName}
+          autoFocus
+          required
+          onChange={handleChangeSignIn}
+          placeholder="username"
+        />
+        <label htmlFor="signUpPassword"></label>
+        <input
+          type="password"
+          name="signUpPassword"
+          value={formData.signUpPassword}
+          required
+          onChange={handleChangeSignIn}
+          placeholder="password"
+        />
+        <label htmlFor="signUpDisplayName"></label>
+        <input
+          type="text"
+          name="signUpDisplayName"
+          value={formData.signUpDisplayName}
+          required
+          onChange={handleChangeSignIn}
+          placeholder="display name"
+        />
+        <button type="submit">Sign Up</button>
+      </form>
     </>
   );
 }
