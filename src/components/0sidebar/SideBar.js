@@ -3,7 +3,7 @@ import AllUsers from "./AllUsers.js";
 import Friends from "./Friends.js";
 import TopLikedMessages from "./TopLikedMessages.js";
 import RedditAPI from "./RedditAPI.js";
-import Ibe from "./Ibe.js";
+import DogPics from "./DogPics.js";
 import { useStore } from "../../store/store";
 
 function SideBar() {
@@ -20,7 +20,7 @@ function SideBar() {
           <Friends />
           <TopLikedMessages />
           <RedditAPI />
-          <Ibe />
+          <DogPics />
         </div>
       ) : (
         <div></div>
