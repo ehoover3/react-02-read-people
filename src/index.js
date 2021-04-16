@@ -3,20 +3,15 @@ import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import "bootstrap/dist/css/bootstrap.min.css";
-// import { Keyframes } from "react-keyframes";
-import "./index.css";
 import "./App.css";
-import "./Dunya.css";
-import "./Ibe.css";
-import "./Ryan.css";
-import "./components/Navigation/Navigation.css";
-import "./components/Sidebar/Sidebar.css";
-import "./components/0_LoginPage/LoginPage.css";
-import "./components/1_Home/Home.css";
-import "./components/2_Learn/Learn.css";
-import "./components/3_Chat/Chat.css";
-import "./components/5_Play/Play.css";
-import "./components/6_User/User.css";
+import "./components/0navigation/Navigation.css";
+import "./components/0sidebar/Sidebar.css";
+import "./components/1Login/Login.css";
+import "./components/2Home/Home.css";
+import "./components/3Grow/Grow.css";
+import "./components/4Talk/Talk.css";
+import "./components/5Play/Play.css";
+import "./components/6User/User.css";
 
 ReactDOM.render(
   <React.StrictMode>
