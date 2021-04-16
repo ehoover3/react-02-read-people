@@ -12,6 +12,7 @@ import "./components/3Grow/Grow.css";
 import "./components/4Talk/Talk.css";
 import "./components/5Play/Play.css";
 import "./components/6User/User.css";
+import "./components/0sidebar/DogPicsAPI.css";
 
 ReactDOM.render(
   <React.StrictMode>
