@@ -1,7 +1,7 @@
 import React from "react";
-import SideBar from "../components/sidebar/SideBar.js";
+import SideBar from "../components/0sidebar/SideBar.js";
 import { useStore } from "../store/store";
-import PlayVideo from "../components/5_Play/PlayVideo";
+import PlayVideo from "../components/5Play/PlayVideo";
 
 function Play(props) {
   return (

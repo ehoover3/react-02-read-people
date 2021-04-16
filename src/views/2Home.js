@@ -1,16 +1,19 @@
 import React, { useState, useEffect } from "react";
-import { useStore } from "../../store/store";
-import { baseURL, fetch_getUser, fetch_setPicture } from "../../fetchRequests";
-import { CameraFill } from "react-bootstrap-icons";
+import { useStore } from "../store/store";
+import {
+  fetch_getUser,
+  fetch_setPicture,
+  fetch_updateUser,
+} from "../fetchRequests";
+import Carousel1 from "../components/2Home/Carousel";
 
-function Photo(props) {
+function Home(props) {
   const authUser = useStore((state) => state.user);
   const [myUser, setMyUser] = useState({});
   const [about, setAbout] = useState("");
   const [displayName, setDisplayName] = useState("");
   const [picture, setPicture] = useState({});
   const [count, setCount] = useState(0);
-
   useEffect(() => {
     fetch_getUser(authUser.username).then((data) => {
       setMyUser(data.user);
@@ -18,7 +21,18 @@ function Photo(props) {
       setDisplayName(data.user.displayName);
     });
   }, [props.match, count]);
-
+  function handleSubmit(e) {
+    e.preventDefault();
+    const newUserInfo = {
+      about,
+      displayName,
+    };
+    fetch_updateUser(authUser.token, myUser.username, newUserInfo).then(
+      (data) => {
+        setMyUser(data.user);
+      }
+    );
+  }
   function handleSubmitPhoto(event) {
     setCount((count) => count + 1);
     console.log("handle submit photo");
@@ -30,25 +44,14 @@ function Photo(props) {
   }
 
   return (
-    <section>
-      <div className="Photo_ImageContainer">
-        <img className="Photo_Image" src={baseURL + myUser.pictureLocation} />
+    <div className="App_ColumnContainer">
+      <div className="App_ColumnLeft">
+        <Carousel1 />
       </div>
-
-      <div className="Photo_ImageButtons">
-        <span>
-          <input
-            type="file"
-            onChange={(event) => setPicture(event.target.files[0])}
-          />
-
-          <button onClick={handleSubmitPhoto}>
-            <CameraFill /> Update Photo
-          </button>
-        </span>
-      </div>
-    </section>
+      <div className="App_ColumnRight">{/* <SideBar /> */}</div>
+      <div></div>
+    </div>
   );
 }
 
-export default Photo;
+export default Home;

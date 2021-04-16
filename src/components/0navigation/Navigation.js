@@ -63,12 +63,12 @@ function Navigation(props) {
             </div>
             <div className="Nav_FlexCenter">
               <Nav.Item>
-                <Nav.Link eventKey="1" as={Link} to="/Learn">
+                <Nav.Link eventKey="1" as={Link} to="/Grow">
                   <Tree /> GROW
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link eventKey="2" as={Link} to="/Chat">
+                <Nav.Link eventKey="2" as={Link} to="/Talk">
                   <Chat /> TALK
                 </Nav.Link>
               </Nav.Item>

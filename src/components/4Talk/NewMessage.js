@@ -7,7 +7,7 @@ import {
 } from "../../store/store";
 import { Button, Dropdown } from "react-bootstrap";
 
-function Chat(props) {
+function NewMessage(props) {
   const dispatch = useStore((state) => state.dispatch);
   const booleanHideCreateMessage = useStore(
     (state) => state.booleanHideCreateMessage
@@ -138,4 +138,4 @@ function Chat(props) {
     </>
   );
 }
-export default Chat;
+export default NewMessage;

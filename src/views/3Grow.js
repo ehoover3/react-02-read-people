@@ -1,17 +1,17 @@
 import React from "react";
 import { ArrowUpCircle, Bricks } from "react-bootstrap-icons";
 import { Link } from "react-router-dom";
-import SideBar from "../components/sidebar/SideBar.js";
-import QuizMenu from "../components/2_Learn/QuizMenu.js";
+import SideBar from "../components/0sidebar/SideBar.js";
+import Menu from "../components/3Grow/Menu.js";
 
-function Learn(props) {
+function Grow(props) {
   return (
     <div className="App_ColumnContainer">
       <div className="App_ColumnLeft">
-        <QuizMenu />
+        <Menu />
       </div>
       <div className="App_ColumnRight">{/* <SideBar /> */}</div>
     </div>
   );
 }
-export default Learn;
+export default Grow;

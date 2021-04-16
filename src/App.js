@@ -4,20 +4,20 @@ import { Container } from "react-bootstrap";
 import { useStore } from "./store/store";
 import "bootstrap/dist/css/bootstrap.min.css";
 //VIEWS
-import LoginPage from "./views/0_LoginPage";
-import NewProfile from "./components/0_LoginPage/NewProfile";
-import Navigation from "./components/Navigation/Navigation";
-import SideBar from "./components/sidebar/SideBar.js";
-import Home from "./views/1_Home";
-import Learn from "./views/2_Learn";
-import Chat from "./views/3_Chat";
-import Play from "./views/5_Play";
-import User from "./views/6_User";
-import NotFound from "./views/5_NotFound";
-//
-import Quiz from "./components/2_Learn/Quiz";
-import Video1 from "./components/2_Learn/videos/Video1";
-import Video2 from "./components/2_Learn/videos/Video2";
+import LoginPage from "./views/1Login";
+import NewUser from "./components/1Login/NewUser";
+import Navigation from "./components/0navigation/Navigation";
+import SideBar from "./components/0sidebar/SideBar.js";
+import Error_404 from "./views/0Error";
+import Home from "./views/2Home";
+import Grow from "./views/3Grow";
+import Talk from "./views/4Talk";
+import Play from "./views/5Play";
+import User from "./views/6User";
+//GROW - SUBSECTIONS
+import Quiz from "./components/3Grow/Quiz";
+import Video1 from "./components/3Grow/videos/Video1";
+import Video2 from "./components/3Grow/videos/Video2";
 
 function App() {
   const user = useStore((state) => state.user);
@@ -28,8 +28,8 @@ function App() {
     return (
       <Switch>
         <Route exact path="/" component={LoginPage} />
-        <Route exact path="/NewProfile" component={NewProfile} />
-        <Route component={NotFound} />
+        <Route exact path="/NewProfile" component={NewUser} />
+        <Route component={Error_404} />
       </Switch>
     );
   } else {
@@ -40,15 +40,15 @@ function App() {
         <SideBar />
         <Switch>
           <Route exact path="/Home" component={Home} />
-          <Route exact path="/Learn" component={Learn} />
-          <Route exact path="/Chat" component={Chat} />
+          <Route exact path="/Grow" component={Grow} />
+          <Route exact path="/Talk" component={Talk} />
           <Route exact path="/Play" component={Play} />
           <Route exact path="/User" component={User} />
-          <Route exact path="/2_Learn/Quiz" component={Quiz} />
-          <Route exact path="/2_Learn/Video1" component={Video1} />
-          <Route exact path="/2_Learn/Video2" component={Video2} />
+          <Route exact path="/Grow/Quiz" component={Quiz} />
+          <Route exact path="/Grow/Video1" component={Video1} />
+          <Route exact path="/Grow/Video2" component={Video2} />
           <Route exact path="/" component={Home} />
-          <Route component={NotFound} />
+          <Route component={Error_404} />
         </Switch>
       </Container>
     );

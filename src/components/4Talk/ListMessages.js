@@ -12,7 +12,7 @@ import {
 } from "../../fetchRequests";
 import Message from "./Message";
 
-export function MessageList(props) {
+export function ListMessages(props) {
   const dispatch = useStore((state) => state.dispatch);
   const user = useStore((state) => state.user);
   const userMessages = useStore((state) => state.messages);
@@ -117,4 +117,4 @@ export function MessageList(props) {
   );
 }
 
-export default MessageList;
+export default ListMessages;

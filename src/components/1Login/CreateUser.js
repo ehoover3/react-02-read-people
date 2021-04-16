@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import { STORE_LOGIN, useStore, STORE_CREATE_USER } from "../../store/store";
 import { fetch_login, fetch_createUser } from "../../fetchRequests";
 
-function CreateProfile(props) {
+function CreateUser(props) {
   const dispatch = useStore((state) => state.dispatch);
 
   const [formData, setFormData] = useState({
     signUpUserName: "",
     signUpPassword: "",
-    signUpDisplayName: "", 
+    signUpDisplayName: "",
   });
 
   const handleChangeSignIn = (e) => {
@@ -69,8 +69,8 @@ function CreateProfile(props) {
         />
         <button type="submit">Sign Up</button>
       </form>
-      </>
-  )
-};
+    </>
+  );
+}
 
-export default CreateProfile;
+export default CreateUser;

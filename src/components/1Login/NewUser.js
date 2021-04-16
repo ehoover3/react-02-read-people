@@ -1,14 +1,14 @@
 import React from "react";
 import { useStore } from "../../store/store";
-import CreateProfile from "./CreateProfile";
+import CreateUser from "./CreateUser";
 
-function NewProfile(props) {
+function NewUser(props) {
   const user = useStore((state) => state.user);
   return (
     <>
-      <CreateProfile />
+      <CreateUser />
     </>
   );
 }
 
-export default NewProfile;
+export default NewUser;

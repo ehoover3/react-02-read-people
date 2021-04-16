@@ -61,7 +61,7 @@ function Message(props) {
                 className="Message1_Button"
                 onClick={() =>
                   fetch_deleteMessage(authUser.token, id).then(() => {
-                    props.getAllOfMessages();
+                    props.getMessages();
                   })
                 }
               >

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { STORE_GET_TOP_LIKED_MESSAGES, useStore } from "../../store/store";
 import { fetch_getAllMessages } from "../../fetchRequests";
-import Message from "../3_Chat/Message";
+import Message from "../4Talk/Message";
 
 import { Accordion, Button, Card } from "react-bootstrap";
 

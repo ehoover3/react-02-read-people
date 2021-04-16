@@ -9,13 +9,12 @@ import {
   QuestionCircle,
 } from "react-bootstrap-icons";
 import { Link } from "react-router-dom";
-import { Button } from "react-bootstrap";
 
-function QuizMenu(props) {
+function Menu(props) {
   return (
     <>
       <div className="QuizMenu_Line">
-        <Link to="/2_Learn/Quiz">
+        <Link to="/Grow/Quiz">
           <QuestionCircle className="QuizMenu_ArrowUpCircle" />
           <div>Dog Body Language</div>
         </Link>
@@ -29,7 +28,7 @@ function QuizMenu(props) {
 
       <div className="QuizMenu_Line">
         <div className="QuizMenu_FlexColumn">
-          <Link to="/2_Learn/Video1">
+          <Link to="/Grow/Video1">
             <PlayCircle className="QuizMenu_ArrowUpCircle" />
             <div>Empathy</div>
           </Link>
@@ -54,7 +53,7 @@ function QuizMenu(props) {
         <ArrowUpCircle className="QuizMenu_ArrowUpCircle" />
       </div>
       <div className="QuizMenu_Line">
-        <Link to="/2_Learn/Video2">
+        <Link to="/Grow/Video2">
           <PlayCircle className="QuizMenu_ArrowUpCircle" />
           <div>Let Them Go</div>
         </Link>
@@ -130,4 +129,4 @@ function QuizMenu(props) {
   );
 }
 
-export default QuizMenu;
+export default Menu;

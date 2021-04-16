@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function NotFound(props) {
+function Error_404(props) {
   return (
     <>
       <Link to="/">Return to Home Page</Link>
@@ -9,4 +9,4 @@ function NotFound(props) {
   );
 }
 
-export default NotFound;
+export default Error_404;
