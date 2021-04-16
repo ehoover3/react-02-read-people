@@ -1,24 +1,64 @@
+#root {
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  margin: 0;
+  font-family: SofiaPro, Poppins, sans-serif;
+}
+
 .App_Container {
   margin: 0px;
   padding: 0px;
   width: 100vw;
   max-width: 100vw;
 }
-.App_ColumnContainer {
-  display: flex;
-  justify-content: center;
+
+:root {
+  /* BRAND COLORS */
+  /* grey */
+  --grey1: #f7f7f7;
+  --grey2: #e5e5e5;
+  --grey3: #afafaf;
+  --grey4: #777777;
+  --grey5: #4b4b4b;
+  --grey6: #202f36;
+  --grey7: #141f23;
+  /* red */
+  --red1: #ebe3e3;
+  --red2: #ffdfe0;
+  --red3: #ffb2b2;
+  --red4: #f5a4a4;
+  --red5: #ff7878;
+  --red6: #ff4b4b;
+  --red7: #ea2b2b;
+  /* orange */
+  --orange1: #fff5d3;
+  --orange2: #fbe56d;
+  --orange3: #ffcc00;
+  --orange4: #ffc800;
+  --orange5: #ffb100;
+  --orange6: #ff9600;
+  /* green */
+  --green1: #d7ffb8;
+  --green2: #a5ed6e;
+  --green3: #89e219;
+  --green4: #58cc02;
+  --green5: #58cc02;
+  --green6: #58a700;
+  /* blue */
+  --blue1: #ddf4ff;
+  --blue2: #d2e4e8;
+  --blue3: #bbf2ff;
+  --blue4: #7af0f2;
+  --blue5: #84d8ff;
+  --blue6: #1cb0f6;
+  --blue7: #1899d6;
+  --blue8: #2b70c9;
+  --blue9: #1453a3;
+  /* purple */
+  --purple1: #ffaade;
+  --purple2: #ce82ff;
+  --purple3: #9069cd;
+  --purple4: #6f4ea1;
 }
-.App_ColumnLeft {
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  outline: grey 1px solid;
-  margin: 0px;
-  padding: 0px;
-}
-/* .App_ColumnRight {
-  width: 15vw;
-  display: flex;
-  flex-direction: column;
-  outline: grey 1px solid;
-} */
