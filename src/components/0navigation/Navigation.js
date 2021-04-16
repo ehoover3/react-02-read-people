@@ -19,10 +19,11 @@ import {
 function Navigation(props) {
   const gems = useStore((state) => state.gems);
   const authUser = useStore((state) => state.user);
+  const userName = useStore((state) => state.userName);
   const [displayName, setDisplayName] = useState("");
   const dispatch = useStore((state) => state.dispatch);
   const openSidebar = useStore((state) => state.openSidebar);
-
+  console.log("USERNAME: " + userName);
   const toggleSidebar = () => {
     dispatch({
       type: STORE_HAMBURGER_CLICK_AT_LEAST_ONCE,

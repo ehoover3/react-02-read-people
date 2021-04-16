@@ -5,7 +5,9 @@ References: Peter Mayor, TJ Hindman, Meagan Ramey, Mike A., Gabby Basha, Mia Pea
 
 # INSTALLED DEPENDENCIES
 
+- npm install
 - npm install react-youtube
+- npm i face-api.js
 
 # IDEAS
 

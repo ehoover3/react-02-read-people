@@ -3,12 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import * as faceapi from "face-api.js";
 
 // COMMAND LINE COMMANDS
-// 1. npm install --global yarn
-// 2. yarn start
-// 3. npm i face-api.js
-// 4. yarn add face-api.js
-
-// 3. npm i face-api.js
+// npm i face-api.js
 
 console.log(faceapi);
 
