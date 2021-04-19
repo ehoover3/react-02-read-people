@@ -37,7 +37,7 @@ function NewUser(props) {
   };
 
   return (
-    <>
+    <div className="NewUser">
       <form className="Login" onSubmit={handleSignIn}>
         <label htmlFor="username"></label>
         <input
@@ -69,7 +69,7 @@ function NewUser(props) {
         />
         <button type="submit">Sign Up</button>
       </form>
-    </>
+    </div>
   );
 }
 
