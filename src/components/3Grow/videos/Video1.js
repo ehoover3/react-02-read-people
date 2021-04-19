@@ -20,7 +20,7 @@ function Video1(props) {
     <div className="Video_Container">
       <h3>Brené Brown on Empathy</h3>
       <YouTube videoId={"1Evwgu369Jw"} opts={opts} onReady={_onReady} />
-      <Link to="/Learn">Continue to Grow</Link>
+      <Link to="/Grow">Continue to Grow</Link>
     </div>
   );
 }
