@@ -1,5 +1,5 @@
 export const baseURL = "http://localhost:3000";
-// const baseURL = "https://socialapp-api.herokuapp.com/"; // alternative API server
+//export const baseURL = "https://socialapp-api.heroku.com/"; // alternative API server
 
 ////////////////////////////////////////////////////////////////////////////////
 // Table of Contents
@@ -138,7 +138,7 @@ export const fetch_getUserMessages = (username) => {
 };
 
 // // POST   ​/messages                  Create a message
-export const fetch_createMessage = (token, text) => {
+export const fetch_createMessage = (token, text, username) => {
   return fetch(baseURL + "/messages", {
     method: "POST",
     headers: {
@@ -147,6 +147,7 @@ export const fetch_createMessage = (token, text) => {
     },
     body: JSON.stringify({
       text,
+      username,
     }),
   }).then((res) => res.json());
 };

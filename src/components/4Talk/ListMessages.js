@@ -22,14 +22,14 @@ export function ListMessages(props) {
   );
 
   useEffect(() => {
-    fetch_getAllMessages(user.username).then((messageList) => {
+    fetch_getAllMessages().then((messageList) => {
       dispatch({ type: STORE_GET_ALL_MESSAGES, payload: messageList });
     });
   }, []);
 
   function getAllMessages() {
-    fetch_getAllMessages(user.username).then((messageList) => {
-      dispatch({ type: STORE_GET_USER_MESSAGES, payload: messageList });
+    fetch_getAllMessages().then((messageList) => {
+      dispatch({ type: STORE_GET_ALL_MESSAGES, payload: messageList });
     });
   }
   function getUserMessages() {
@@ -98,10 +98,10 @@ export function ListMessages(props) {
       </section>
 
       <section>
-        {userMessages.messages &&
-          userMessages.messages.map((message) => (
+        {userMessages &&
+          userMessages.map((message) => (
             <Message
-              likes={message.likes.length}
+              likes={message.like.length}
               key={message.id}
               text={message.text}
               username={message.username}
