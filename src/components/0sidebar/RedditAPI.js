@@ -6,7 +6,7 @@ import { Accordion, Button, Card } from "react-bootstrap";
 
 function RedditAPI() {
   const [articles, setArticles] = useState([]);
-  const [subreddit, setSubreddit] = useState("webdev");
+  const [subreddit, setSubreddit] = useState("body_Language");
 
   // useEffect(() => {}, []);
   useEffect(() => {
@@ -30,7 +30,7 @@ function RedditAPI() {
       <Card>
         <Card.Header>
           <Accordion.Toggle as={Button} variant="link" eventKey="0">
-            Reddit API
+            Reddit
           </Accordion.Toggle>
         </Card.Header>
         <Accordion.Collapse eventKey="0">

@@ -16,11 +16,13 @@
   animation-iteration-count: infinite;
   /* position: relative; */
 }
-
-#Login_Button {
+h1.Login {
+  font-size: 10vh;
+}
+.Login_Button {
   mix-blend-mode: soft-light;
 }
-#Login_Name {
+.Login_Name {
   mix-blend-mode: luminosity;
 }
 
@@ -101,7 +103,7 @@
   top: 130px;
 }
 
-#Login_Link {
+.Login_Link {
   color: #2a3f03;
 }
 
