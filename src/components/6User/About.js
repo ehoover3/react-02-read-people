@@ -33,7 +33,7 @@ function About(props) {
 
   return (
     <Container>
-      <Form.Group controlId="formBasicEmail">
+      {/* <Form.Group controlId="formBasicEmail">
         <Form.Label>Display Name: {myUser.displayName}</Form.Label>
         <Form.Control
           onChange={(e) => setDisplayName(e.target.value)}
@@ -41,7 +41,7 @@ function About(props) {
           type="text"
           placeholder="my real name"
         />
-      </Form.Group>
+      </Form.Group> */}
 
       <Form onSubmit={handleSubmit}>
         <Form.Group controlId="formBasicEmail">

@@ -1,13 +1,14 @@
 import React, { useState } from "react";
-import info1 from "./Info1.js";
+import info2 from "./Info2.js";
 import { ProgressBar } from "react-bootstrap";
-import { useStore, STORE_ADD_GEMS } from "../../store/store";
+import { useStore, STORE_ADD_GEMS } from "../../../store/store";
+import { Link } from "react-router-dom";
 
-export default function App() {
+export default function Quiz2() {
   const dispatch = useStore((state) => state.dispatch);
   const gems = useStore((state) => state.gems);
 
-  let questions = info1;
+  let questions = info2;
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showScore, setShowScore] = useState(false);
   const [score, setScore] = useState(0);
@@ -50,7 +51,7 @@ export default function App() {
         <div className="Quiz_AnswerContainer">
           {questions[currentQuestion].answerOptions.map((answer) => (
             <button
-              className="Quiz_Button"
+              className="Quiz2_Button"
               onClick={() => handleAnswerClick(answer.isCorrect)}
             >
               <img src={answer.answerText}></img>
@@ -66,6 +67,7 @@ export default function App() {
         <ProgressBar variant="success" now={100} />{" "}
         <div className="Quiz_ResultsContainer">
           You scored {score} out of {questions.length}
+          <Link to="/Grow">Continue to Grow</Link>
         </div>
       </div>
     );
