@@ -1,13 +1,13 @@
 /* QUIZ MENU  */
-.QuizMenu_ArrowUpCircle,
+.QuizMenu_Animation,
 .QuizMenu_Brick {
   font-size: 15vh;
 }
 
-.QuizMenu_ArrowUpCircle {
+.QuizMenu_Animation {
   transition: transform 0.7s ease-in-out;
 }
-.QuizMenu_ArrowUpCircle:hover {
+.QuizMenu_Animation:hover {
   transform: rotate(360deg);
 }
 
@@ -31,7 +31,8 @@
 .Quiz_QuestionContainer,
 .Quiz_ResultsContainer {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 .Quiz_AnswerContainer {
   width: 100vw;
@@ -48,6 +49,9 @@
   width: 36vw;
   height: 20vh;
   margin-bottom: 5vh;
+}
+.Quiz2_Button img {
+  height: 30vh;
 }
 .Quiz_Button:hover {
   background-color: turquoise;

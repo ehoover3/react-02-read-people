@@ -10,12 +10,7 @@
   width: 70vw;
   height: 70vh;
 }
-.Carousel_Text1 {
-  color: #007bff;
-  font-weight: bold;
-}
-
-.Carousel_Text2 {
+.Carousel_Text {
   color: #007bff;
   font-weight: bold;
 }

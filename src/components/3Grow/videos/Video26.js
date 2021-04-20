@@ -2,7 +2,7 @@ import React from "react";
 import YouTube from "react-youtube";
 import { Link } from "react-router-dom";
 
-function Video2(props) {
+function Video26(props) {
   const opts = {
     height: "624",
     width: "1024",
@@ -18,11 +18,11 @@ function Video2(props) {
 
   return (
     <div className="Video_Container">
-      <h3>Name It To Tame It</h3>
-      <YouTube videoId={"ZcDLzppD4Jc"} opts={opts} onReady={_onReady} />
+      <h3>Aristotle</h3>
+      <YouTube videoId={"YmZqEsZfWyc"} opts={opts} onReady={_onReady} />
       <Link to="/Grow">Continue to Grow</Link>
     </div>
   );
 }
 
-export default Video2;
+export default Video26;

@@ -4,7 +4,7 @@ import Carousel from "react-bootstrap/Carousel";
 const Carousel1 = () => {
   return (
     <div className="Carousel_Container">
-      <h3 className="Carousel_Text1">Life Skills</h3>
+      <h3 className="Carousel_Text">Life Skills</h3>
       <Carousel>
         <Carousel.Item>
           <img
@@ -22,7 +22,7 @@ const Carousel1 = () => {
           />
         </Carousel.Item>
       </Carousel>
-      <h3 className="Carousel_Text2">
+      <h3 className="Carousel_Text">
         Read Body Language • Connect With Empathy
       </h3>
     </div>
