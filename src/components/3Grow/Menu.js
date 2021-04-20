@@ -25,7 +25,7 @@ function Menu(props) {
           menuText={"Name It To Tame It"}
           icon={"Brain"}
         />
-        <MenuItem link={"/Grow"} menuText={"???"} icon={"Map"} />
+        <MenuItem link={"/Grow/Video35"} menuText={"Read Signs"} icon={"Map"} />
       </div>
       <div className="QuizMenu_Line">
         <MenuItem link={"/Grow/Quiz2"} menuText={"Face"} icon={"User"} />
@@ -128,10 +128,10 @@ function Menu(props) {
       </div>
       <div className="QuizMenu_Line">
         <MenuItem link={"/Grow/Video24"} menuText={"Tree"} icon={"Tree"} />
-        <MenuItem link={"/Grow"} menuText={"???"} icon={"Tools"} />
+        <MenuItem link={"/Grow/Video33"} menuText={"Tools"} icon={"Tools"} />
       </div>
       <div className="QuizMenu_Line">
-        <MenuItem link={"/Grow"} menuText={"???"} icon={"Star"} />
+        <MenuItem link={"/Grow/Video34"} menuText={"Negotiate"} icon={"Star"} />
         <MenuItem link={"/Grow/Video20"} menuText={"Exercise"} icon={"Run"} />
       </div>
       <div className="QuizMenu_Line">
