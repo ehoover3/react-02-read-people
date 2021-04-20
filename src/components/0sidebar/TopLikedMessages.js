@@ -11,8 +11,8 @@ function TopLikedMessages() {
 
   function getTopLikedMessages() {
     fetch_getAllMessages().then((messageList) => {
-      messageList.messages
-        .sort((a, b) => b.likes.length - a.likes.length)
+      messageList
+        .sort((a, b) => b.like.length - a.like.length)
         .splice(10, messageList.messages.length);
 
       dispatch({

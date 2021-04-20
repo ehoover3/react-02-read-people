@@ -17,7 +17,7 @@ function AllUsers() {
 
   useEffect(() => {
     fetch_getUsersNames().then((data) => {
-      setUsers(data.users);
+      setUsers(data);
     });
   }, []);
 

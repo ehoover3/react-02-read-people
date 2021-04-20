@@ -17,7 +17,7 @@ function NewMessage(props) {
     messageText: "",
     username: user.username,
   });
-  const [dropDownText, setDropDownText] = useState("CHATROOM 1");
+  const [dropDownText, setDropDownText] = useState("ALL");
 
   const handleCreateMessage = (e) => {
     e.preventDefault();

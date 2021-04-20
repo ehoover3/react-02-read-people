@@ -163,7 +163,7 @@ export const fetch_deleteMessage = (token, messageId) => {
       Authorization: "Bearer " + token,
       "Content-Type": "application/json",
     },
-  }).then((res) => res.json());
+  })
 };
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -171,7 +171,7 @@ export const fetch_deleteMessage = (token, messageId) => {
 ////////////////////////////////////////////////////////////////////////////////
 
 // // POST  ​ /likes                     Add Like
-export const fetch_addLike = (token, messageId) => {
+export const fetch_addLike = (token, messageId, username) => {
   return fetch(baseURL + "/likes", {
     method: "POST",
     headers: {
@@ -180,6 +180,7 @@ export const fetch_addLike = (token, messageId) => {
     },
     body: JSON.stringify({
       messageId,
+      username,
     }),
   }).then((res) => res.json());
 };
