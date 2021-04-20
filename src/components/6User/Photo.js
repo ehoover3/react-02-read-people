@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useStore } from "../../store/store";
 import { baseURL, fetch_getUser, fetch_setPicture } from "../../fetchRequests";
 import { CameraFill } from "react-bootstrap-icons";
+import { Button } from "react-bootstrap";
 
 function Photo(props) {
   const authUser = useStore((state) => state.user);
@@ -42,6 +43,9 @@ function Photo(props) {
             onChange={(event) => setPicture(event.target.files[0])}
           />
 
+          {/* <Button variant="outline-primary" onClick={handleSubmitPhoto}>
+            <CameraFill /> Update Photo
+          </Button> */}
           <button onClick={handleSubmitPhoto}>
             <CameraFill /> Update Photo
           </button>

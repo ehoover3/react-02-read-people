@@ -1,45 +1,20 @@
-.PlayContainer {
+.Play_VideoAndCanvas {
   margin: 0;
   padding: 0;
   width: 100vw;
-  height: 100vh;
-  /* Put webcam in the center of the screen */
+  height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-canvas {
-  position: absolute;
-}
-
-.Play {
-  display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
 }
 
-.Play_VideoContainer {
-  margin-top: 10px;
-  width: 500px;
-  height: 500px;
-  border: 1px solid #000;
-}
-
-.Play_Input {
-  margin-top: 10px;
-}
-
-.display-flex {
-  display: flex;
-}
-
-.justify-content-center {
-  justify-content: center;
-}
-
-.position-absolute {
+.Play_Canvas {
   position: absolute;
+}
+
+.Play_ButtonContainer {
+  display: flex;
+  width: 100vw;
+  justify-content: center;
 }

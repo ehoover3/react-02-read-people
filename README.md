@@ -25,7 +25,11 @@
 
 Authors: Dunya Moss, Eric Hoover, Ibiene Longjohn, Ryan Detzler
 References: Peter Mayor, TJ Hindman, Meagan Ramey, Mike A., Gabby Basha, Mia Peace
-Source: Build Real Time Face Detection With Javascript <https://www.youtube.com/watch?v=CVClHLwv-4I>
+
+- FACE API
+- 1. https://github.com/justadudewhohacks/face-api.js
+- 2. Build Real Time Face Detection With Javascript <https://www.youtube.com/watch?v=CVClHLwv-4I>
+- 3. Face Recognition (face api.js) React application Tagalog Tutorial <https://www.youtube.com/watch?v=EejpxMtDg8M>
 
 # INSTALLED DEPENDENCIES
 
