@@ -83,7 +83,9 @@ export const fetch_updateUser = (token, username, newUserInfo) => {
       Authorization: "Bearer " + token,
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(newUserInfo),
+    body: JSON.stringify({
+      newUserInfo
+    }),
   }).then((res) => res.json());
 };
 
