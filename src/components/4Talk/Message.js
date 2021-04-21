@@ -19,7 +19,7 @@ function Message(props) {
       if (likeId.length === 1) {
         return likeId[0]._id;
     }
-    return null;
+    return;
   };
 
   function handleAddLike() {
