@@ -33,7 +33,7 @@ function Message(props) {
   }
 
   function handleRemoveLike() {
-    fetch_removeLike(authUser.token, likedId())
+    fetch_removeLike(likedId())
       .then(() => {
         props.getMessages();
       })
