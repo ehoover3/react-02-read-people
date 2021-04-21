@@ -16,7 +16,7 @@ export function ListMessages(props) {
   const dispatch = useStore((state) => state.dispatch);
   const user = useStore((state) => state.user);
   const userMessages = useStore((state) => state.messages);
-  const [dropDownText, setDropDownText] = useState("ALL");
+  // const [dropDownText, setDropDownText] = useState("ALL");
   const booleanHideCreateMessage = useStore(
     (state) => state.booleanHideCreateMessage
   );
@@ -48,7 +48,7 @@ export function ListMessages(props) {
     <>
       <section className="MessageList_NavigationBar">
         <div className="MessageList_DropDown">
-          <Dropdown>
+          {/* <Dropdown>
             <Dropdown.Toggle variant="primary" id="dropdown-basic">
               Dropdown Button
             </Dropdown.Toggle>
@@ -66,11 +66,11 @@ export function ListMessages(props) {
                 USER
               </Dropdown.Item>
             </Dropdown.Menu>
-          </Dropdown>
+          </Dropdown> */}
 
-          <Button variant="light" disabled>
+          {/* <Button variant="light" disabled>
             {dropDownText}
-          </Button>
+          </Button> */}
         </div>
 
         <Button
