@@ -83,7 +83,9 @@ export const fetch_updateUser = (token, username, newUserInfo) => {
       Authorization: "Bearer " + token,
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(newUserInfo),
+    body: JSON.stringify({
+      newUserInfo
+    }),
   }).then((res) => res.json());
 };
 
@@ -178,11 +180,10 @@ export const fetch_addLike = (token, messageId, username) => {
 };
 
 // // DELETE ​/likes​/{likeId}            Remove Like
-export const fetch_removeLike = (token, likedId) => {
+export const fetch_removeLike = (likedId) => {
   return fetch(baseURL + "/likes/" + likedId, {
     method: "DELETE",
     headers: {
-      Authorization: "Bearer " + token,
       "Content-Type": "application/json",
     },
   })
