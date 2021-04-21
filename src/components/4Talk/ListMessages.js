@@ -37,10 +37,10 @@ export function ListMessages(props) {
       dispatch({ type: STORE_GET_USER_MESSAGES, payload: messageList });
     });
   }
-  function getDirectMessages() {}
-  function getChatroom1Messages() {}
-  function getChatroom2Messages() {}
-  function getChatroom3Messages() {}
+  // function getDirectMessages() {}
+  // function getChatroom1Messages() {}
+  // function getChatroom2Messages() {}
+  // function getChatroom3Messages() {}
 
   return (
     <>
