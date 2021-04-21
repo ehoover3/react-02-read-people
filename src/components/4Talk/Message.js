@@ -15,21 +15,29 @@ function Message(props) {
   const likedId = (props) => {
     const likeId = likeArray.filter(
       (like) => authUser.username === like.username
-    );
-    if (likeId.length === 1) {
-      return likeId[0]._id;
+      );
+      if (likeId.length === 1) {
+        console.log(likeId[0]._id)
+        return likeId[0]._id;
     }
     return null;
   };
 
   function handleAddLike() {
-    fetch_addLike(authUser.token, id, authUser.user)
-      .then(() => {
-        props.getMessages();
-      })
-      .then((messages) => {
-        dispatch({ type: STORE_ADD_LIKE, payload: messages });
-      });
+    const likeId = likeArray.filter(
+      (like) => authUser.username === like.username
+      );
+      if (likeId.length > 0){
+        return
+      } else {
+        fetch_addLike(authUser.token, id, authUser.username)
+          .then(() => {
+            props.getMessages();
+          })
+          .then((messages) => {
+            dispatch({ type: STORE_ADD_LIKE, payload: messages });
+          });
+      }
   }
 
   function handleRemoveLike() {
