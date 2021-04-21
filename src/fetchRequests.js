@@ -106,10 +106,10 @@ export const fetch_getUser = (username) => {
 // unused
 export const fetch_setPicture = (username, pictureData, token) => {
   return fetch(`${baseURL}/users/${username}/picture`, {
-    method: 'PUT',
-    headers: { 
+    method: "PUT",
+    headers: {
       Authorization: `Bearer ${token}`,
-  },
+    },
     body: JSON.stringify(pictureData),
   }).then((res) => res.json());
 };
@@ -157,7 +157,7 @@ export const fetch_deleteMessage = (token, messageId) => {
       Authorization: "Bearer " + token,
       "Content-Type": "application/json",
     },
-  })
+  });
 };
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -199,9 +199,9 @@ export const fetch_addFriend = (username, friend) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      friend
-    })
-  }).then((res) => res.json())
+      friend,
+    }),
+  }).then((res) => res.json());
 };
 
 // DELETE /friends/{username}          Remove friend
@@ -212,16 +212,16 @@ export const fetch_removeFriend = (username, friend) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      friend
-    })
+      friend,
+    }),
   }).then((res) => res.json());
 };
 
 // GET /friends/{username}            Get friends list
 export const fetch_getFriends = (username) => {
-  return fetch(baseURL + '/friends/' + username, {
+  return fetch(baseURL + "/friends/" + username, {
     headers: {
       "Content-Type": "application/json",
     },
-  }).then((res) => res.json())
+  }).then((res) => res.json());
 };
