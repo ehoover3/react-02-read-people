@@ -39,17 +39,18 @@ function Photo(props) {
       <div className="Photo_ImageButtons">
         <span>
           <input
+            className="Photo_InputButton"
             type="file"
             onChange={(event) => setPicture(event.target.files[0])}
           />
 
-          {/* <Button variant="outline-primary" onClick={handleSubmitPhoto}>
-            <CameraFill /> Update Photo
-          </Button> */}
-          <button onClick={handleSubmitPhoto}>
+          <button className="btn btn-primary" onClick={handleSubmitPhoto}>
             <CameraFill /> Update Photo
           </button>
         </span>
+        {/* <Button variant="outline-primary" onClick={handleSubmitPhoto}>
+            <CameraFill /> Update Photo
+          </Button> */}
       </div>
     </section>
   );
