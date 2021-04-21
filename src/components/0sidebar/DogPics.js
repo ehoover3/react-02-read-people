@@ -39,7 +39,7 @@ function DogPics() {
       <Card>
         <Card.Header>
           <Accordion.Toggle as={Button} variant="link" eventKey="0">
-            Furry Friend Of the Day 
+            Guess The Emotion  
           </Accordion.Toggle>
         </Card.Header>
         <Accordion.Collapse eventKey="0">
