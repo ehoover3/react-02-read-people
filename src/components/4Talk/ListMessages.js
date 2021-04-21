@@ -25,7 +25,7 @@ export function ListMessages(props) {
     fetch_getAllMessages().then((messageList) => {
       dispatch({ type: STORE_GET_ALL_MESSAGES, payload: messageList });
     });
-  }, []);
+  }, [booleanHideCreateMessage]);
 
   function getAllMessages() {
     fetch_getAllMessages().then((messageList) => {
@@ -41,6 +41,8 @@ export function ListMessages(props) {
   // function getChatroom1Messages() {}
   // function getChatroom2Messages() {}
   // function getChatroom3Messages() {}
+
+  console.log(userMessages);
 
   return (
     <>
@@ -63,18 +65,6 @@ export function ListMessages(props) {
               >
                 USER
               </Dropdown.Item>
-              {/* <Dropdown.Item onClick={() => setDropDownText("DM's")}>
-                DM's
-              </Dropdown.Item>
-              <Dropdown.Item onClick={() => setDropDownText("CHATROOM 1")}>
-                CHATROOM 1
-              </Dropdown.Item>
-              <Dropdown.Item onClick={() => setDropDownText("CHATROOM 2")}>
-                CHATROOM 2
-              </Dropdown.Item>
-              <Dropdown.Item onClick={() => setDropDownText("CHATROOM 3")}>
-                CHATROOM 3
-              </Dropdown.Item> */}
             </Dropdown.Menu>
           </Dropdown>
 
@@ -99,19 +89,22 @@ export function ListMessages(props) {
 
       <section>
         {userMessages &&
-          userMessages.map((message) => (
-            <Message
-              likes={message.like.length}
-              key={message._id}
-              text={message.text}
-              username={message.username}
-              createdAt={message.createdAt}
-              id={message._id}
-              likeArray={message.like}
-              getMessages={getAllMessages}
-              Message_Return={"MessageList"}
-            />
-          ))}
+          userMessages
+            // .sort((a, b) => a.createdAt - b.createdAt)
+            .map((message) => (
+              <Message
+                likes={message.like.length}
+                key={message._id}
+                text={message.text}
+                username={message.username}
+                createdAt={message.createdAt}
+                id={message._id}
+                likeArray={message.like}
+                getMessages={getAllMessages}
+                Message_Return={"MessageList"}
+              />
+            ))
+            .reverse()}
       </section>
     </>
   );
