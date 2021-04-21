@@ -9,31 +9,30 @@ function Photo(props) {
   const [myUser, setMyUser] = useState({});
   const [about, setAbout] = useState("");
   const [displayName, setDisplayName] = useState("");
-  const [picture, setPicture] = useState({});
+  const [picture, setPicture] = useState("");
   const [count, setCount] = useState(0);
 
   useEffect(() => {
     fetch_getUser(authUser.username).then((data) => {
-      setMyUser(data.user);
-      setAbout(data.user.about);
-      setDisplayName(data.user.displayName);
+      setMyUser(data.username);
+      setAbout(data.about);
+      setDisplayName(data.displayName);
     });
   }, [props.match, count]);
 
   function handleSubmitPhoto(event) {
     setCount((count) => count + 1);
-    console.log("handle submit photo");
     fetch_setPicture(
-      authUser.token,
       authUser.username,
-      picture
+      picture,
+      authUser.token,
     ).then((response) => console.log(response));
   }
 
   return (
     <section>
       <div className="Photo_ImageContainer">
-        <img className="Photo_Image" src={baseURL + myUser.pictureLocation} />
+        <img className="Photo_Image" src={baseURL + authUser.pictureLocation} />
       </div>
 
       <div className="Photo_ImageButtons">
@@ -41,6 +40,7 @@ function Photo(props) {
           <input
             className="Photo_InputButton"
             type="file"
+            accept=".jpeg, .png, .jpg"
             onChange={(event) => setPicture(event.target.files[0])}
           />
 

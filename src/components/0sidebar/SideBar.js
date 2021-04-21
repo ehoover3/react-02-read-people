@@ -1,6 +1,6 @@
 import React from "react";
 import AllUsers from "./AllUsers.js";
-import Friends from "./Friends.js";
+//import Friends from "./Friends.js";
 import TopLikedMessages from "./TopLikedMessages.js";
 import RedditAPI from "./RedditAPI.js";
 import DogPics from "./DogPics.js";
@@ -17,7 +17,6 @@ function SideBar() {
       {hambugerClickAtLeastOnce ? (
         <div className={openSidebar ? "sidebar open" : "sidebar1 close"}>
           <AllUsers />
-          <Friends />
           <TopLikedMessages />
           <RedditAPI />
           <DogPics />

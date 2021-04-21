@@ -102,21 +102,13 @@ export const fetch_getUser = (username) => {
 
 // // GET ​   /users​/{username}​/picture  Get a user's picture
 // unused
-export const fetch_getPicture = (username) => {
-  return fetch(baseURL + "/users/" + username.username + "/picture", {});
-};
-
-// // PUT ​   /users​/{username}​/picture  Set user's picture
-export const fetch_setPicture = (token, username, pictureData) => {
-  let formData = new FormData();
-  formData.append("picture", pictureData);
-  return fetch(baseURL + `/users/${username}/picture`, {
-    method: "PUT",
-    headers: {
-      Authorization: "Bearer " + token,
-      // "Content-Type":"multipart/form-data"
-    },
-    body: formData,
+export const fetch_setPicture = (username, pictureData, token) => {
+  return fetch(`${baseURL}/users/${username}/picture`, {
+    method: 'PUT',
+    headers: { 
+      Authorization: `Bearer ${token}`,
+  },
+    body: JSON.stringify(pictureData),
   }).then((res) => res.json());
 };
 
