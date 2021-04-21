@@ -42,7 +42,7 @@ function NewMessage(props) {
       <div className="CreateMessage_FirstLine">
         <div className="CreateMessage_DropDown">
           {/* DROP DOWN BUTTON */}
-          <Dropdown>
+          {/* <Dropdown>
             <Dropdown.Toggle variant="primary" id="dropdown-basic">
               CHOOSE ROOM OR USER
             </Dropdown.Toggle>
@@ -97,11 +97,11 @@ function NewMessage(props) {
                 FRIEND 5
               </Dropdown.Item>
             </Dropdown.Menu>
-          </Dropdown>
+          </Dropdown> */}
           {/* SHOW DROPDOWN TEXT */}
-          <Button variant="light" disabled>
+          {/* <Button variant="light" disabled>
             {dropDownText}
-          </Button>
+          </Button> */}
         </div>
 
         <div>

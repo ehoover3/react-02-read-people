@@ -63,7 +63,7 @@ export function ListMessages(props) {
               >
                 USER
               </Dropdown.Item>
-              <Dropdown.Item onClick={() => setDropDownText("DM's")}>
+              {/* <Dropdown.Item onClick={() => setDropDownText("DM's")}>
                 DM's
               </Dropdown.Item>
               <Dropdown.Item onClick={() => setDropDownText("CHATROOM 1")}>
@@ -74,7 +74,7 @@ export function ListMessages(props) {
               </Dropdown.Item>
               <Dropdown.Item onClick={() => setDropDownText("CHATROOM 3")}>
                 CHATROOM 3
-              </Dropdown.Item>
+              </Dropdown.Item> */}
             </Dropdown.Menu>
           </Dropdown>
 

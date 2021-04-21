@@ -1,8 +1,24 @@
 # Week 1 Retrospective
 
+1. What went well?
+
+- Good Teamwork and Communication
+- Clear tasks assigned
+
+2. What didn't go well?
+
+- Bugs
+- Need to streamline ideas
+
+3. What's our next steps?
+
+- Debug
+- Make styles consistent
+- Figure out the backend
+
 # Week 2 Retropsective
 
-1.  What went well?
+1. What went well?
 
 - Our app's purpose has a clear description and presenting our project went well
 - Communication and participation was great
@@ -20,6 +36,25 @@
 
 - Fix the bugs
 - Connect the backend to the frontend
+
+# Week 3 Retropsective
+
+1. What went well?
+
+- Communication
+- Identifying the bugs and problems
+
+2. What didn't go well?
+
+- Technical problems with git commit and losing code
+- Debugging asynchronous code and promises in the video emotion detection
+- Overambitious project scope, needed to scale down and cut features
+
+3. Lessons learned for future project?
+
+- Clarify the minimum viable product and project scope
+- Priotize features and avoid scope creep, until primary features function
+- Better organizing the file archetecture with clearer file names
 
 # Credits and References
 
