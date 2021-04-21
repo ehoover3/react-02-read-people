@@ -1,5 +1,5 @@
-export const baseURL = "https://kwitter-api-b.herokuapp.com";
-// const baseURL = "https://socialapp-api.herokuapp.com/"; // alternative API server
+export const baseURL = "http://localhost:3000";
+//export const baseURL = "https://socialapp-api.heroku.com/"; // alternative API server
 
 ////////////////////////////////////////////////////////////////////////////////
 // Table of Contents
@@ -102,21 +102,13 @@ export const fetch_getUser = (username) => {
 
 // // GET ​   /users​/{username}​/picture  Get a user's picture
 // unused
-export const fetch_getPicture = (username) => {
-  return fetch(baseURL + "/users/" + username.username + "/picture", {});
-};
-
-// // PUT ​   /users​/{username}​/picture  Set user's picture
-export const fetch_setPicture = (token, username, pictureData) => {
-  let formData = new FormData();
-  formData.append("picture", pictureData);
-  return fetch(baseURL + `/users/${username}/picture`, {
-    method: "PUT",
-    headers: {
-      Authorization: "Bearer " + token,
-      // "Content-Type":"multipart/form-data"
-    },
-    body: formData,
+export const fetch_setPicture = (username, pictureData, token) => {
+  return fetch(`${baseURL}/users/${username}/picture`, {
+    method: 'PUT',
+    headers: { 
+      Authorization: `Bearer ${token}`,
+  },
+    body: JSON.stringify(pictureData),
   }).then((res) => res.json());
 };
 
@@ -138,7 +130,7 @@ export const fetch_getUserMessages = (username) => {
 };
 
 // // POST   ​/messages                  Create a message
-export const fetch_createMessage = (token, text) => {
+export const fetch_createMessage = (token, text, username) => {
   return fetch(baseURL + "/messages", {
     method: "POST",
     headers: {
@@ -147,6 +139,7 @@ export const fetch_createMessage = (token, text) => {
     },
     body: JSON.stringify({
       text,
+      username,
     }),
   }).then((res) => res.json());
 };
@@ -162,7 +155,7 @@ export const fetch_deleteMessage = (token, messageId) => {
       Authorization: "Bearer " + token,
       "Content-Type": "application/json",
     },
-  }).then((res) => res.json());
+  })
 };
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -170,7 +163,7 @@ export const fetch_deleteMessage = (token, messageId) => {
 ////////////////////////////////////////////////////////////////////////////////
 
 // // POST  ​ /likes                     Add Like
-export const fetch_addLike = (token, messageId) => {
+export const fetch_addLike = (token, messageId, username) => {
   return fetch(baseURL + "/likes", {
     method: "POST",
     headers: {
@@ -179,6 +172,7 @@ export const fetch_addLike = (token, messageId) => {
     },
     body: JSON.stringify({
       messageId,
+      username,
     }),
   }).then((res) => res.json());
 };
@@ -194,4 +188,39 @@ export const fetch_removeLike = (token, likedId) => {
   })
     .then((res) => res.json())
     .then((res) => console.log(res));
+};
+
+// POST /friends/{username}             Add friend
+export const fetch_addFriend = (username, friend) => {
+  return fetch(baseURL + "/friends" + username, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      friend
+    })
+  }).then((res) => res.json())
+};
+
+// DELETE /friends/{username}          Remove friend
+export const fetch_removeFriend = (username, friend) => {
+  return fetch(baseURL + "/friends" + username, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      friend
+    })
+  }).then((res) => res.json());
+};
+
+// GET /friends/{username}            Get friends list
+export const fetch_getFriends = (username) => {
+  return fetch(baseURL + '/friends/' + username, {
+    headers: {
+      "Content-Type": "application/json",
+    },
+  }).then((res) => res.json())
 };

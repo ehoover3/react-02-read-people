@@ -4,7 +4,7 @@ const initialState = {
   user: { token: "" },
   messages: [],
   topLikedMessages: [],
-  message: {},
+  message: [],
   crowns: 7,
   streak: 2,
   gems: 5,

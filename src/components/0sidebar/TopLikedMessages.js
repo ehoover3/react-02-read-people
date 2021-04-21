@@ -11,9 +11,9 @@ function TopLikedMessages() {
 
   function getTopLikedMessages() {
     fetch_getAllMessages().then((messageList) => {
-      messageList.messages
-        .sort((a, b) => b.likes.length - a.likes.length)
-        .splice(10, messageList.messages.length);
+      messageList
+        .sort((a, b) => b.like.length - a.like.length)
+        .splice(10, messageList);
 
       dispatch({
         type: STORE_GET_TOP_LIKED_MESSAGES,
@@ -36,17 +36,17 @@ function TopLikedMessages() {
           <Card.Body>
             <section>
               {/* CONDITIONAL RENDERING: if messages.messages exists, run map function */}
-              {topLikedMessages.messages &&
-                topLikedMessages.messages.map((message) => (
+              {topLikedMessages &&
+                topLikedMessages.map((message) => (
                   <Message
-                    likes={message.likes.length}
+                    likes={message.like.length}
                     key={message.id}
                     messageId={message.id}
                     text={message.text}
                     username={message.username}
                     createdAt={message.createdAt}
-                    id={message.id}
-                    likeArray={message.likes}
+                    id={message._id}
+                    likeArray={message.like}
                     getMessages={getTopLikedMessages}
                     Message_Return={"TopLikedMessages"}
                   />

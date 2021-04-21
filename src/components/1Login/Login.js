@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { STORE_LOGIN, useStore, STORE_CREATE_USER } from "../../store/store";
-import { fetch_login, fetch_createUser } from "../../fetchRequests";
+import { STORE_LOGIN, useStore } from "../../store/store";
+import { fetch_login } from "../../fetchRequests";
 
 function Login(props) {
   const dispatch = useStore((state) => state.dispatch);
@@ -23,31 +23,6 @@ function Login(props) {
     const inputName = e.target.name;
     const inputValue = e.target.value;
     setFormData((state) => ({ ...state, [inputName]: inputValue }));
-  };
-
-  const handleChangeSignIn = (e) => {
-    const inputName = e.target.name;
-    const inputValue = e.target.value;
-    setFormData((state) => ({ ...state, [inputName]: inputValue }));
-  };
-
-  const handleSignIn = (e) => {
-    e.preventDefault();
-    fetch_createUser(
-      formData.signUpUserName,
-      formData.signUpPassword,
-      formData.signUpDisplayName
-    ).then((userData) => {
-      dispatch({ type: STORE_CREATE_USER, payload: userData });
-      if (userData.statusCode === 200) {
-        fetch_login(
-          formData.signUpUserName,
-          formData.signUpPassword
-        ).then((userData) =>
-          dispatch({ type: STORE_LOGIN, payload: userData })
-        );
-      }
-    });
   };
 
   return (

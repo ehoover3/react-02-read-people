@@ -15,12 +15,13 @@ function NewMessage(props) {
   const user = useStore((state) => state.user);
   const [formData, setFormData] = useState({
     messageText: "",
+    username: user.username,
   });
-  const [dropDownText, setDropDownText] = useState("CHATROOM 1");
+  const [dropDownText, setDropDownText] = useState("ALL");
 
   const handleCreateMessage = (e) => {
     e.preventDefault();
-    fetch_createMessage(user.token, formData.messageText)
+    fetch_createMessage(user.token, formData.messageText, formData.username)
       .then((message) => {
         dispatch({ type: STORE_CREATE_MESSAGE, payload: message });
       })

@@ -25,7 +25,7 @@ function NewUser(props) {
       formData.signUpDisplayName
     ).then((userData) => {
       dispatch({ type: STORE_CREATE_USER, payload: userData });
-      if (userData.statusCode === 200) {
+      if (userData.token) {
         fetch_login(
           formData.signUpUserName,
           formData.signUpPassword
