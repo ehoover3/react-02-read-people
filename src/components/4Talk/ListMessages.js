@@ -25,7 +25,7 @@ export function ListMessages(props) {
     fetch_getAllMessages().then((messageList) => {
       dispatch({ type: STORE_GET_ALL_MESSAGES, payload: messageList });
     });
-  }, [dispatch]);
+  }, []);
 
   function getAllMessages() {
     fetch_getAllMessages().then((messageList) => {
@@ -102,7 +102,7 @@ export function ListMessages(props) {
           userMessages.map((message) => (
             <Message
               likes={message.like.length}
-              key={message.id}
+              key={message._id}
               text={message.text}
               username={message.username}
               createdAt={message.createdAt}

@@ -189,3 +189,38 @@ export const fetch_removeLike = (token, likedId) => {
     .then((res) => res.json())
     .then((res) => console.log(res));
 };
+
+// POST /friends/{username}             Add friend
+export const fetch_addFriend = (username, friend) => {
+  return fetch(baseURL + "/friends" + username, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      friend
+    })
+  }).then((res) => res.json())
+};
+
+// DELETE /friends/{username}          Remove friend
+export const fetch_removeFriend = (username, friend) => {
+  return fetch(baseURL + "/friends" + username, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      friend
+    })
+  }).then((res) => res.json());
+};
+
+// GET /friends/{username}            Get friends list
+export const fetch_getFriends = (username) => {
+  return fetch(baseURL + '/friends/' + username, {
+    headers: {
+      "Content-Type": "application/json",
+    },
+  }).then((res) => res.json())
+};
