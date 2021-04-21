@@ -76,16 +76,14 @@ export const fetch_createUser = (username, password, displayName) => {
 };
 
 // // PATCH  ​/users​/{username}          Update user
-export const fetch_updateUser = (token, username, newUserInfo) => {
+export const fetch_updateUser = (token, username, about) => {
   return fetch(baseURL + `/users/${username}`, {
     method: "PATCH",
     headers: {
       Authorization: "Bearer " + token,
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({
-      newUserInfo
-    }),
+    body: JSON.stringify({about}),
   }).then((res) => res.json());
 };
 

@@ -17,7 +17,6 @@ function Message(props) {
       (like) => authUser.username === like.username
       );
       if (likeId.length === 1) {
-        console.log(likeId[0]._id)
         return likeId[0]._id;
     }
     return null;
@@ -41,6 +40,7 @@ function Message(props) {
   }
 
   function handleRemoveLike() {
+    if(!likedId()) {return}
     fetch_removeLike(likedId())
       .then(() => {
         props.getMessages();
