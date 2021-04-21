@@ -16,8 +16,8 @@ function SideBar() {
     <>
       {hambugerClickAtLeastOnce ? (
         <div className={openSidebar ? "sidebar open" : "sidebar1 close"}>
-          <AllUsers />
-          <Friends />
+          {/* <AllUsers />
+          <Friends /> */}
           <TopLikedMessages />
           <RedditAPI />
           <DogPics />
