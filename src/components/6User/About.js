@@ -9,6 +9,7 @@ function About(props) {
   const [about, setAbout] = useState("");
   const [displayName, setDisplayName] = useState("");
   const [count, setCount] = useState(0);
+  const [about2, setAbout2] = useState("");
 
   useEffect(() => {
     fetch_getUser(authUser.username).then((data) => {
@@ -20,13 +21,13 @@ function About(props) {
   function handleSubmit(e) {
     e.preventDefault();
     const newUserInfo = {
-      "about": about};
-    console.log(newUserInfo)
-    fetch_updateUser(authUser.token, authUser.username, about).then(
-      (data) => {
-        setMyUser(data.user);
-      }
-    );
+      about: about,
+    };
+    console.log(newUserInfo);
+    setAbout2(newUserInfo.about);
+    fetch_updateUser(authUser.token, authUser.username, about).then((data) => {
+      setMyUser(data.user);
+    });
   }
 
   return (
@@ -43,7 +44,7 @@ function About(props) {
 
       <Form onSubmit={handleSubmit}>
         <Form.Group controlId="formBasicEmail">
-          <Form.Label>About: {authUser.about}</Form.Label>
+          <Form.Label>About: {about2}</Form.Label>
           <Form.Control
             onChange={(e) => setAbout(e.target.value)}
             value={about}
