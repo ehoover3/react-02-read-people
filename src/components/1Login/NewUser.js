@@ -58,7 +58,7 @@ function NewUser(props) {
           onChange={handleChangeSignIn}
           placeholder="password"
         />
-        <label htmlFor="signUpDisplayName"></label>
+        {/* <label htmlFor="signUpDisplayName"></label>
         <input
           type="text"
           name="signUpDisplayName"
@@ -66,7 +66,7 @@ function NewUser(props) {
           required
           onChange={handleChangeSignIn}
           placeholder="display name"
-        />
+        /> */}
         <button id="UserButton" className="btn btn-light" type="submit">
           Sign Up
         </button>
