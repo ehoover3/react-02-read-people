@@ -19,7 +19,7 @@ function Message(props) {
       if (likeId.length === 1) {
         return likeId[0]._id;
     }
-    return;
+    return null;
   };
 
   function handleAddLike() {
@@ -40,6 +40,7 @@ function Message(props) {
   }
 
   function handleRemoveLike() {
+    if(!likedId()) {return}
     fetch_removeLike(likedId())
       .then(() => {
         props.getMessages();
