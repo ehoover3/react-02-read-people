@@ -20,6 +20,7 @@ function About(props) {
       setMyUser(data.username);
       setAbout(data.about);
     });
+
   }, [THISabout]);
 
   function handleSubmit(e) {
@@ -31,6 +32,7 @@ function About(props) {
       });
       // //setMyUser(data.user);
     });
+
   }
 
   return (
