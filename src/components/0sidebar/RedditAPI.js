@@ -11,7 +11,7 @@ function RedditAPI() {
   // useEffect(() => {}, []);
   useEffect(() => {
     // Add the API fetch request here
-    fetch("https://www.reddit.com/r/body_language.json").then((res) => {
+    fetch(`https://www.reddit.com/r/${subreddit}.json`).then((res) => {
       if (res.status != 200) {
         console.log("Error");
         return;

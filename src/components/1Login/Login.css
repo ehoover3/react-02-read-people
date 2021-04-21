@@ -20,7 +20,8 @@
 h1.Login {
   font-size: 10vh;
 }
-.Login_Button {
+.Login_Button,
+#UserButton {
   mix-blend-mode: soft-light;
 }
 .Login_Name {
@@ -95,7 +96,8 @@ h1.Login {
 /* font-size:; */
 /* } */
 
-#Login_MoveForm {
+#Login_MoveForm,
+#SignupPage {
   /* margin-top:auto; */
   /* margin-bottom: auto; */
   /* margin-left: auto; */

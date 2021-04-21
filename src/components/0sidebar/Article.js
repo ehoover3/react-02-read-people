@@ -4,7 +4,7 @@ function Article(props) {
   return (
     <article>
       <a href={"https://reddit.com" + props.article.permalink} target="_blank">
-        <h3>{props.article.title}</h3>
+        <h6>{props.article.title}</h6>
       </a>
     </article>
   );
