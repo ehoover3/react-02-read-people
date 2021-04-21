@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { fetch_getUsersNames } from "../../fetchRequests.js";
+import { useStore } from "../../store/store";
+import { fetch_getFriends } from "../../fetchRequests.js";
 import {
   Accordion,
   Button,
@@ -12,11 +13,12 @@ import {
 import { DashCircle } from "react-bootstrap-icons";
 
 function Friends(props) {
+  const authUser = useStore((state) => state.user);
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    fetch_getUsersNames().then((data) => {
-      setUsers(data.users);
+    fetch_getFriends(authUser.username).then((data) => {
+      setUsers(data);
     });
   }, []);
 
@@ -34,7 +36,7 @@ function Friends(props) {
               return (
                 <>
                   <p className="AllUserNames_FlexBox">
-                    {user.username}
+                    {user}
                     <OverlayTrigger
                       key={"left"}
                       placement={"left"}

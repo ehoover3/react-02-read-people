@@ -37,9 +37,9 @@ function Navigation(props) {
 
   useEffect(() => {
     fetch_getUser(authUser.username).then((data) => {
-      setDisplayName(data.user.username.toUpperCase());
+      setDisplayName(data.username.toUpperCase());
     });
-  }, []);
+  }, [authUser.username]);
 
   return (
     <>

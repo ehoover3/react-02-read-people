@@ -12,9 +12,9 @@ function About(props) {
 
   useEffect(() => {
     fetch_getUser(authUser.username).then((data) => {
-      setMyUser(data.user);
-      setAbout(data.user.about);
-      setDisplayName(data.user.displayName);
+      setMyUser(data.username);
+      setAbout(data.about);
+      setDisplayName(data.displayName);
     });
   }, [props.match, count]);
 
@@ -45,7 +45,7 @@ function About(props) {
 
       <Form onSubmit={handleSubmit}>
         <Form.Group controlId="formBasicEmail">
-          <Form.Label>About: {myUser.about}</Form.Label>
+          <Form.Label>About: {authUser.about}</Form.Label>
           <Form.Control
             onChange={(e) => setAbout(e.target.value)}
             value={about}

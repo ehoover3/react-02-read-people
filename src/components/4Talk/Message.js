@@ -10,20 +10,20 @@ import {
 function Message(props) {
   const dispatch = useStore((state) => state.dispatch);
   const authUser = useStore((state) => state.user);
-  const { id } = props;
+  const { id }= props;
   const { likeArray } = props || [];
   const likedId = (props) => {
     const likeId = likeArray.filter(
       (like) => authUser.username === like.username
     );
     if (likeId.length === 1) {
-      return likeId[0].id;
+      return likeId[0]._id;
     }
     return null;
   };
 
   function handleAddLike() {
-    fetch_addLike(authUser.token, id)
+    fetch_addLike(authUser.token, id, authUser.user)
       .then(() => {
         props.getMessages();
       })
@@ -73,7 +73,7 @@ function Message(props) {
               <HandThumbsUp />
             </button>
             {/* LIKES COUNT */}
-            {props.likes}
+            {likeArray !== []? likeArray.length : 0}
             {/* REMOVE LIKE BUTTON */}
             <button className="Message1_Button" onClick={handleRemoveLike}>
               <HandThumbsDown />
