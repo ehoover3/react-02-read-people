@@ -11,6 +11,7 @@ const initialState = {
   booleanHideCreateMessage: true,
   openSidebar: false,
   hambugerClickAtLeastOnce: false,
+  about: "",
 };
 //////////////////////////
 export const STORE_LOGIN = "STORE_LOGIN";
@@ -38,6 +39,8 @@ export const STORE_OPEN_SIDEBAR = "STORE_OPEN_SIDEBAR";
 export const STORE_HAMBURGER_CLICK_AT_LEAST_ONCE =
   "STORE_HAMBURGER_CLICK_AT_LEAST_ONCE"; // this is so that the sidebar close animation doesn't run upon first loading the program
 //////////////////////////
+// export const STORE_ABOUT = "STORE_ABOUT";
+
 const reducer = (state, action) => {
   switch (action.type) {
     case STORE_LOGIN:
@@ -47,7 +50,7 @@ const reducer = (state, action) => {
     case STORE_CREATE_USER:
       return { newUser: action.payload };
     case STORE_UPDATE_USER:
-      return console.log("TO DO");
+      return { user: action.payload };
     case STORE_GET_USERS_NAMES:
       return console.log("TO DO");
     case STORE_GET_USER:
@@ -84,6 +87,9 @@ const reducer = (state, action) => {
 
     case STORE_HAMBURGER_CLICK_AT_LEAST_ONCE:
       return { hambugerClickAtLeastOnce: action.payload };
+
+    // case STORE_ABOUT:
+    //   return { about: action.payload };
 
     default:
       return state;
