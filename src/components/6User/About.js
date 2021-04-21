@@ -14,17 +14,15 @@ function About(props) {
     fetch_getUser(authUser.username).then((data) => {
       setMyUser(data.username);
       setAbout(data.about);
-      setDisplayName(data.displayName);
     });
-  }, [props.match, count]);
+  }, [props.match, count, authUser.username]);
 
   function handleSubmit(e) {
     e.preventDefault();
     const newUserInfo = {
-      about,
-      displayName,
-    };
-    fetch_updateUser(authUser.token, myUser.username, newUserInfo).then(
+      "about": about};
+    console.log(newUserInfo)
+    fetch_updateUser(authUser.token, authUser.username, about).then(
       (data) => {
         setMyUser(data.user);
       }
