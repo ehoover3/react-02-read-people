@@ -17,11 +17,14 @@
   animation-iteration-count: infinite;
   /* position: relative; */
 }
-
-#Login_Button {
+h1.Login {
+  font-size: 10vh;
+}
+.Login_Button,
+#UserButton {
   mix-blend-mode: soft-light;
 }
-#Login_Name {
+.Login_Name {
   mix-blend-mode: luminosity;
 }
 
@@ -93,7 +96,8 @@
 /* font-size:; */
 /* } */
 
-#Login_MoveForm {
+#Login_MoveForm,
+#SignupPage {
   /* margin-top:auto; */
   /* margin-bottom: auto; */
   /* margin-left: auto; */
@@ -102,7 +106,7 @@
   top: 130px;
 }
 
-#Login_Link {
+.Login_Link {
   color: #2a3f03;
 }
 

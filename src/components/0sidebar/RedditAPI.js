@@ -6,12 +6,12 @@ import { Accordion, Button, Card } from "react-bootstrap";
 
 function RedditAPI() {
   const [articles, setArticles] = useState([]);
-  const [subreddit, setSubreddit] = useState("webdev");
+  const [subreddit, setSubreddit] = useState("body_Language");
 
   // useEffect(() => {}, []);
   useEffect(() => {
     // Add the API fetch request here
-    fetch("https://www.reddit.com/r/body_language.json").then((res) => {
+    fetch(`https://www.reddit.com/r/${subreddit}.json`).then((res) => {
       if (res.status != 200) {
         console.log("Error");
         return;
@@ -30,7 +30,7 @@ function RedditAPI() {
       <Card>
         <Card.Header>
           <Accordion.Toggle as={Button} variant="link" eventKey="0">
-            Reddit API
+            Reddit
           </Accordion.Toggle>
         </Card.Header>
         <Accordion.Collapse eventKey="0">

@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { STORE_LOGIN, useStore } from "../../store/store";
-import { fetch_login } from "../../fetchRequests";
+
+import { STORE_LOGIN, useStore, STORE_CREATE_USER } from "../../store/store";
+import { fetch_login, fetch_createUser } from "../../fetchRequests";
+import { Button } from "react-bootstrap";
+
+
 
 function Login(props) {
   const dispatch = useStore((state) => state.dispatch);
@@ -53,7 +57,7 @@ function Login(props) {
             onChange={handleChangeLogIn}
             placeholder="password"
           />
-          <button className=" Login_Button" type="submit">
+          <button className="btn btn-light Login_Button" type="submit">
             Login
           </button>
           <h6 className="Login_Name">

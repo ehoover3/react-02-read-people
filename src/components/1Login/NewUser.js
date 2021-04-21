@@ -38,7 +38,7 @@ function NewUser(props) {
 
   return (
     <div className="NewUser">
-      <form className="Login" onSubmit={handleSignIn}>
+      <form id="SignupPage" className="Login" onSubmit={handleSignIn}>
         <label htmlFor="username"></label>
         <input
           type="text"
@@ -67,7 +67,9 @@ function NewUser(props) {
           onChange={handleChangeSignIn}
           placeholder="display name"
         />
-        <button type="submit">Sign Up</button>
+        <button id="UserButton" className="btn btn-light" type="submit">
+          Sign Up
+        </button>
       </form>
     </div>
   );
