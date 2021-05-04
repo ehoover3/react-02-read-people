@@ -1,18 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
-import App from "./App";
+import App from "./app";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.css";
-import "./components/0navigation/Navigation.css";
-import "./components/0sidebar/Sidebar.css";
-import "./components/1Login/Login.css";
-import "./components/2Home/Home.css";
-import "./components/3Grow/Grow.css";
-import "./components/4Talk/Talk.css";
-import "./components/5Play/Play.css";
-import "./components/6User/User.css";
-import "./components/0sidebar/DogPicsAPI.css";
+import "./app.css";
+import "./components/0navbar/0navbar.css";
+import "./components/0rightColumn/0rightColumn.css";
+import "./components/1login/0login.css";
+import "./components/2home/0home.css";
+import "./components/3grow/0grow.css";
+import "./components/4talk/0talk.css";
+import "./components/5play/0play.css";
+import "./components/6user/0user.css";
 
 ReactDOM.render(
   <React.StrictMode>

@@ -1,5 +1,5 @@
 import React from "react";
-import About from "../components/6User/About";
+import About from "../components/6user/1about";
 // import Photo from "../components/6User/Photo";
 
 function User() {

@@ -1,10 +1,13 @@
 import React from "react";
-import Menu from "../components/3Grow/Menu.js";
+import Menu from "../components/3grow/1menu.js";
 
 function Grow() {
   return (
     <>
-      <Menu />
+      <div>
+        <Menu />
+        <rightColumn />
+      </div>
     </>
   );
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import PlayVideo from "../components/5Play/PlayVideo";
+import PlayVideo from "../components/5play/1playVideo";
 
 function Play() {
   return (

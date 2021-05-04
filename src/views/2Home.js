@@ -1,10 +1,14 @@
 import React from "react";
-import Carousel1 from "../components/2Home/Carousel";
+import Carousel1 from "../components/2home/1home";
+import rightColumn from "../components/0rightColumn/1rightColumn";
 
 function Home() {
   return (
     <>
-      <Carousel1 />
+      <div className="App_Thirty_vw"></div>
+      <Carousel1 className="App_ThirtyFive_vw" />
+      <rightColumn className="App_TwentyFive_vw" />
+      <div className="App_Thirty_vw"></div>
     </>
   );
 }

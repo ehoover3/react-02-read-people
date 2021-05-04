@@ -1,33 +1,66 @@
 import React, { useState } from "react";
-import info1 from "./Info1.js";
+import info1 from "./info1.js";
 import { ProgressBar } from "react-bootstrap";
-import { useStore, STORE_ADD_GEMS } from "../../../store/store";
+import { useStore, STORE_COUNT } from "../../../store/store";
 import { Link } from "react-router-dom";
 
 export default function Quiz1() {
   const dispatch = useStore((state) => state.dispatch);
-  const gems = useStore((state) => state.gems);
+  const count = useStore((state) => state.count);
+  const [alert, setAlert] = useState(false);
 
   let questions = info1;
   const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [currentQuestion2, setCurrentQuestion2] = useState(1);
   const [showScore, setShowScore] = useState(false);
   const [score, setScore] = useState(0);
+  const [overlay, setOverlay] = useState(false);
+  const [feedback, setFeedback] = useState("");
 
-  const handleAnswerClick = (isCorrect) => {
-    // STEP 1
+  // useEffect(() => {
+  //   const handleWindowClick = () => setAlert(false);
+  //   if (alert) {
+  //     window.addEventListener("click", handleWindowClick);
+  //   } else {
+  //     window.removeEventListener("click", handleWindowClick);
+  //   }
+  // }, [alert, setAlert]);
+
+  const handleAnswerClick = (isCorrect, answer) => {
+    setOverlay(true); // open feedback
+    // setFeedback(() => questions[currentQuestion].answerOptions[3].answerText);
+    setFeedback(
+      () => questions[currentQuestion].answerOptions[currentQuestion].answerText
+    );
+    console.log(questions[currentQuestion].answerOptions[0].isCorrect);
+    console.log(questions[currentQuestion].answerOptions[1].isCorrect);
+    console.log(questions[currentQuestion].answerOptions[2].isCorrect);
+    console.log(questions[currentQuestion].answerOptions[3].isCorrect);
+    console.log(feedback);
+  };
+
+  const handleFeedbackClick = (isCorrect) => {
+    setOverlay(false); // close feedback
+
+    // STEP 1 - Update Score
     if (isCorrect) {
       setScore(score + 1);
     }
-    // STEP 2
+
+    // STEP 2 - Load Next Question
     const nextQuestion = currentQuestion + 1;
     if (nextQuestion < questions.length) {
+      // Step 3a - Render Next Question
       setCurrentQuestion(nextQuestion);
-    } else {
+    }
+    // Step 3b - Render Results
+    else {
+      // Render Score
       setShowScore(true);
-      // Add 1 to Gem Count
+      // Add 1 to Count
       dispatch({
-        type: STORE_ADD_GEMS,
-        payload: gems + 1,
+        type: STORE_COUNT,
+        payload: count + 1,
       });
     }
   };
@@ -52,11 +85,21 @@ export default function Quiz1() {
           {questions[currentQuestion].answerOptions.map((answer) => (
             <button
               className="Quiz_Button"
-              onClick={() => handleAnswerClick(answer.isCorrect)}
+              onClick={() => handleAnswerClick(answer)}
             >
-              <img src={answer.answerText}></img>
+              <img src={answer.answerText} key={currentQuestion}></img>
             </button>
           ))}
+        </div>
+
+        <div className={overlay ? "Quiz_Overlay_Hide" : "Quiz_Overlay_Show"}>
+          <button
+            onClick={handleFeedbackClick}
+            // onClick={() => setAlert(true)}
+          >
+            &times;
+          </button>
+          <div>test {feedback}</div>
         </div>
       </div>
     );

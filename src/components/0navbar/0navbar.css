@@ -1,0 +1,26 @@
+.Nav_Bar {
+  position: absolute;
+  top: 0vh;
+  left: 0vw;
+  z-index: +5;
+}
+
+.Nav_Flex {
+  width: 70vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Nav_FlexLeft,
+.Nav_FlexCenter,
+.Nav_FlexRight {
+  display: flex;
+}
+
+.Nav_ListIcon {
+  height: 40px;
+}
+
+.Nav_SpaceVertical {
+  height: 40px;
+}

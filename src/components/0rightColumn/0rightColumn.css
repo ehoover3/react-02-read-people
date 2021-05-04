@@ -1,0 +1,11 @@
+.AllUserNames_FlexBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rightColumn {
+  width: 20vw;
+  height: 100vh;
+  background-color: red;
+}

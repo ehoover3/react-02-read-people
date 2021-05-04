@@ -62,3 +62,13 @@ body {
   --purple3: #9069cd;
   --purple4: #6f4ea1;
 }
+
+.App_Fifteen_vw {
+  width: 15vw;
+}
+.App_Thirty_vw {
+  width: 30vw;
+}
+.App_ThirtyFive_vw {
+  width: 35vw;
+}

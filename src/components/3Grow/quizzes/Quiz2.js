@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import info2 from "./Info2.js";
+import info2 from "./info2.js";
 import { ProgressBar } from "react-bootstrap";
-import { useStore, STORE_ADD_GEMS } from "../../../store/store";
+import { useStore, STORE_COUNT } from "../../../store/store";
 import { Link } from "react-router-dom";
 
 export default function Quiz2() {
   const dispatch = useStore((state) => state.dispatch);
-  const gems = useStore((state) => state.gems);
+  const count = useStore((state) => state.count);
 
   let questions = info2;
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -24,10 +24,10 @@ export default function Quiz2() {
       setCurrentQuestion(nextQuestion);
     } else {
       setShowScore(true);
-      // Add 1 to Gem Count
+      // Add 1 to Count
       dispatch({
-        type: STORE_ADD_GEMS,
-        payload: gems + 1,
+        type: STORE_COUNT,
+        payload: count + 1,
       });
     }
   };

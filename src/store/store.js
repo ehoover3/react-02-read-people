@@ -5,20 +5,18 @@ const initialState = {
   messages: [],
   topLikedMessages: [],
   message: [],
-  crowns: 7,
-  streak: 2,
-  gems: 5,
-  booleanHideCreateMessage: true,
-  openSidebar: false,
-  hambugerClickAtLeastOnce: false,
+  count: 5,
+  toggleNewMessage: true,
   about: "",
+  video: "",
+  videoTitle: "",
+  videoId: "",
 };
-//////////////////////////
+
 export const STORE_LOGIN = "STORE_LOGIN";
 export const STORE_LOGOUT = "STORE_LOGOUT";
 export const STORE_CREATE_USER = "STORE_CREATE_USER";
 export const STORE_UPDATE_USER = "STORE_UPDATE_USER";
-
 export const STORE_GET_USERS_NAMES = "STORE_GET_USERS_NAMES";
 export const STORE_GET_USER = "STORE_GET_USER";
 export const STORE_GET_PICTURE = "STORE_GET_PICTURE";
@@ -32,14 +30,12 @@ export const STORE_ADD_LIKE = "STORE_ADD_LIKE";
 export const STORE_REMOVE_LIKE = "STORE_REMOVE_LIKE";
 //////////////////////////
 export const STORE_GET_MESSAGES = "GET_MESSAGES_STORE";
-export const STORE_ADD_GEMS = "ADD_GEMS_STORE";
+export const STORE_COUNT = "ADD_COUNT";
 export const STORE_HIDE_NEW_MESSAGE = "STORE_HIDE_NEW_MESSAGE";
-export const STORE_FLIP_HIDE_CREATE_MESSAGE = "STORE_FLIP_HIDE_CREATE_MESSAGE";
-export const STORE_OPEN_SIDEBAR = "STORE_OPEN_SIDEBAR";
-export const STORE_HAMBURGER_CLICK_AT_LEAST_ONCE =
-  "STORE_HAMBURGER_CLICK_AT_LEAST_ONCE"; // this is so that the sidebar close animation doesn't run upon first loading the program
-//////////////////////////
-// export const STORE_ABOUT = "STORE_ABOUT";
+export const STORE_TOGGLE_NEW_MESSAGE = "STORE_TOGGLE_NEW_MESSAGE";
+export const STORE_VIDEO = "STORE_VIDEO";
+export const STORE_VIDEO_ID = "STORE_VIDEO_ID";
+export const STORE_VIDEO_TITLE = "STORE_VIDEO_TITLE";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -74,22 +70,20 @@ const reducer = (state, action) => {
     case STORE_REMOVE_LIKE:
       return { like: action.payload };
     //////////////////////////
-    case STORE_ADD_GEMS:
-      return { gems: action.payload };
+    case STORE_COUNT:
+      return { count: action.payload };
     case STORE_GET_MESSAGES:
       return { messages: action.payload };
 
-    case STORE_FLIP_HIDE_CREATE_MESSAGE:
-      return { booleanHideCreateMessage: action.payload };
+    case STORE_TOGGLE_NEW_MESSAGE:
+      return { toggleNewMessage: action.payload };
 
-    case STORE_OPEN_SIDEBAR:
-      return { openSidebar: action.payload };
-
-    case STORE_HAMBURGER_CLICK_AT_LEAST_ONCE:
-      return { hambugerClickAtLeastOnce: action.payload };
-
-    // case STORE_ABOUT:
-    //   return { about: action.payload };
+    case STORE_VIDEO:
+      return { video: action.payload };
+    case STORE_VIDEO_ID:
+      return { videoId: action.payload };
+    case STORE_VIDEO_TITLE:
+      return { videoTitle: action.payload };
 
     default:
       return state;
