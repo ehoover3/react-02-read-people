@@ -11,7 +11,7 @@ import {
   fetch_getUserMessages,
   fetch_getAllMessages,
 } from "../../fetchRequests";
-import Message from "./3message";
+import Message from "./message";
 
 export function ListMessages(props) {
   const dispatch = useStore((state) => state.dispatch);

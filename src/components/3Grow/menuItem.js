@@ -63,146 +63,146 @@ import { faVolumeUp } from "@fortawesome/free-solid-svg-icons";
 // import { faWrench } from "@fortawesome/free-solid-svg-icons";
 
 function MenuItem(props) {
-  let icon = "";
-  switch (props.icon) {
+  let img = "";
+  switch (props.img) {
     case "Arrows":
-      icon = faPeopleArrows;
+      img = faPeopleArrows;
       break;
     case "Art":
-      icon = faPalette;
+      img = faPalette;
       break;
     case "Balance":
-      icon = faBalanceScale;
+      img = faBalanceScale;
       break;
     case "Battery":
-      icon = faBatteryFull;
+      img = faBatteryFull;
       break;
     case "Bird":
-      icon = faCrow;
+      img = faCrow;
       break;
     case "Book":
-      icon = faBook;
+      img = faBook;
       break;
     case "BookOpen":
-      icon = faBookOpen;
+      img = faBookOpen;
       break;
     case "Brain":
-      icon = faBrain;
+      img = faBrain;
       break;
     case "Bug":
-      icon = faBug;
+      img = faBug;
       break;
     case "Bulb":
-      icon = faLightbulb;
+      img = faLightbulb;
       break;
     case "Cat":
-      icon = faCat;
+      img = faCat;
       break;
     case "Clock":
-      icon = faClock;
+      img = faClock;
       break;
     case "Cloudy":
-      icon = faCloudSun;
+      img = faCloudSun;
       break;
     case "Dog":
-      icon = faDog;
+      img = faDog;
       break;
     case "Eye":
-      icon = faEye;
+      img = faEye;
       break;
     case "Fire":
-      icon = faFire;
+      img = faFire;
       break;
     case "Fish":
-      icon = faFish;
+      img = faFish;
       break;
     case "Frog":
-      icon = faFrog;
+      img = faFrog;
       break;
     case "HandHeart":
-      icon = faHandHoldingHeart;
+      img = faHandHoldingHeart;
       break;
     case "Habit":
-      icon = faRecycle;
+      img = faRecycle;
       break;
     case "Heart":
-      icon = faHeart;
+      img = faHeart;
       break;
     case "Hike":
-      icon = faHiking;
+      img = faHiking;
       break;
     case "Horse":
-      icon = faHorse;
+      img = faHorse;
       break;
     case "Key":
-      icon = faKey;
+      img = faKey;
       break;
     case "Leaf":
-      icon = faLeaf;
+      img = faLeaf;
       break;
     case "Map":
-      icon = faMapSigns;
+      img = faMapSigns;
       break;
     case "Rest":
-      icon = faRestroom;
+      img = faRestroom;
       break;
     case "Run":
-      icon = faRunning;
+      img = faRunning;
       break;
     case "Shield":
-      icon = faUserShield;
+      img = faUserShield;
       break;
     case "Seed":
-      icon = faSeedling;
+      img = faSeedling;
       break;
     case "Sun":
-      icon = faSun;
+      img = faSun;
       break;
     case "Med":
-      icon = faStethoscope;
+      img = faStethoscope;
       break;
     case "Rain":
-      icon = faCloudShowersHeavy;
+      img = faCloudShowersHeavy;
       break;
     case "Search":
-      icon = faSearch;
+      img = faSearch;
       break;
     case "Star":
-      icon = faStar;
+      img = faStar;
       break;
     case "Tree":
-      icon = faTree;
+      img = faTree;
       break;
     case "Tools":
-      icon = faTools;
+      img = faTools;
       break;
     case "Toxic":
-      icon = faRadiation;
+      img = faRadiation;
       break;
     case "Tri":
-      icon = faExclamationTriangle;
+      img = faExclamationTriangle;
       break;
     case "Tub":
-      icon = faHotTub;
+      img = faHotTub;
       break;
     case "User":
-      icon = faUser;
+      img = faUser;
       break;
     case "UserCircle":
-      icon = faStreetView;
+      img = faStreetView;
       break;
     case "Volume":
-      icon = faVolumeUp;
+      img = faVolumeUp;
       break;
     default:
-      icon = faPlayCircle;
+      img = faPlayCircle;
   }
 
   return (
     <>
       <Link to={props.link} videoTitle={props.videoTitle}>
-        <FontAwesomeIcon icon={icon} className="QuizMenu_Animation" />
-        <div>{props.menuText}</div>
+        <FontAwesomeIcon icon={img} className="QuizMenu_Animation" />
+        <div>{props.txt}</div>
       </Link>
     </>
   );

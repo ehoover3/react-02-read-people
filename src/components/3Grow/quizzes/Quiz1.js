@@ -17,18 +17,8 @@ export default function Quiz1() {
   const [overlay, setOverlay] = useState(false);
   const [feedback, setFeedback] = useState("");
 
-  // useEffect(() => {
-  //   const handleWindowClick = () => setAlert(false);
-  //   if (alert) {
-  //     window.addEventListener("click", handleWindowClick);
-  //   } else {
-  //     window.removeEventListener("click", handleWindowClick);
-  //   }
-  // }, [alert, setAlert]);
-
   const handleAnswerClick = (isCorrect, answer) => {
     setOverlay(true); // open feedback
-    // setFeedback(() => questions[currentQuestion].answerOptions[3].answerText);
     setFeedback(
       () => questions[currentQuestion].answerOptions[currentQuestion].answerText
     );

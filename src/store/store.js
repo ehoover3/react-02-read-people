@@ -8,7 +8,7 @@ const initialState = {
   count: 5,
   toggleNewMessage: true,
   about: "",
-  video: "",
+
   videoTitle: "",
   videoId: "",
 };
@@ -33,7 +33,7 @@ export const STORE_GET_MESSAGES = "GET_MESSAGES_STORE";
 export const STORE_COUNT = "ADD_COUNT";
 export const STORE_HIDE_NEW_MESSAGE = "STORE_HIDE_NEW_MESSAGE";
 export const STORE_TOGGLE_NEW_MESSAGE = "STORE_TOGGLE_NEW_MESSAGE";
-export const STORE_VIDEO = "STORE_VIDEO";
+
 export const STORE_VIDEO_ID = "STORE_VIDEO_ID";
 export const STORE_VIDEO_TITLE = "STORE_VIDEO_TITLE";
 
@@ -78,8 +78,6 @@ const reducer = (state, action) => {
     case STORE_TOGGLE_NEW_MESSAGE:
       return { toggleNewMessage: action.payload };
 
-    case STORE_VIDEO:
-      return { video: action.payload };
     case STORE_VIDEO_ID:
       return { videoId: action.payload };
     case STORE_VIDEO_TITLE:
