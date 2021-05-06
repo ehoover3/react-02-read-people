@@ -11,6 +11,7 @@ const initialState = {
 
   videoTitle: "",
   videoId: "",
+  quizID: "",
 };
 
 export const STORE_LOGIN = "STORE_LOGIN";
@@ -36,6 +37,7 @@ export const STORE_TOGGLE_NEW_MESSAGE = "STORE_TOGGLE_NEW_MESSAGE";
 
 export const STORE_VIDEO_ID = "STORE_VIDEO_ID";
 export const STORE_VIDEO_TITLE = "STORE_VIDEO_TITLE";
+export const STORE_QUIZ_ID = "STORE_QUIZ_ID";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -82,6 +84,8 @@ const reducer = (state, action) => {
       return { videoId: action.payload };
     case STORE_VIDEO_TITLE:
       return { videoTitle: action.payload };
+    case STORE_QUIZ_ID:
+      return { quizID: action.payload };
 
     default:
       return state;

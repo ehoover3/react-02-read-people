@@ -14,9 +14,7 @@ import Talk from "./views/4talk";
 import Play from "./views/5play";
 import User from "./views/6user";
 //GROW - SUBSECTIONS
-import Quiz1 from "./components/3grow/quizzes/quiz1";
-import Quiz2 from "./components/3grow/quizzes/quiz2";
-import Quiz3 from "./components/3grow/quizzes/quiz3";
+import Quiz from "./components/3grow/quiz";
 import Video from "./components/3grow/video";
 
 function App() {
@@ -42,9 +40,7 @@ function App() {
         <Route exact path="/Talk" component={Talk} />
         <Route exact path="/Play" component={Play} />
         <Route exact path="/User" component={User} />
-        <Route exact path="/Grow/Quiz1" component={Quiz1} />
-        <Route exact path="/Grow/Quiz2" component={Quiz2} />
-        <Route exact path="/Grow/Quiz3" component={Quiz3} />
+        <Route exact path="/Quiz" component={Quiz} />
         <Route exact path="/Video" component={Video} />
         <Route exact path="/" component={Home} />
         <Route component={Error_404} />
